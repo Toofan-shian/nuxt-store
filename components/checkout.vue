@@ -9,7 +9,8 @@
 
         <v-row class=" justify-space-between px-1 py-1" no-gutters>
           <span>
-            items
+            Items
+            <span class="text-caption">({{ count }})</span>
           </span>
           <span>
             ${{ total }}
@@ -18,7 +19,7 @@
         
         <v-row class=" justify-space-between px-1 py-1" no-gutters>
           <span>
-            shipping
+            Shipping
           </span>
           <span>
             Free
@@ -27,7 +28,7 @@
         
         <v-row class=" justify-space-between px-1 py-1 pb-3" no-gutters>
           <span>
-            discounts
+            Discounts
           </span>
           <span>
             {{discounts}}
@@ -38,7 +39,7 @@
         
         <v-row class=" justify-space-between px-1 pt-2  text-h5" no-gutters>
           <span>
-            sub total:
+            Subtotal
           </span>
           <span>
             ${{total}}

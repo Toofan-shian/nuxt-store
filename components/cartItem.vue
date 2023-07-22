@@ -5,18 +5,21 @@
       <v-col cols="4">
         <v-img :src="product.thumbnail" class="" height="150" cover>
           <template v-slot:placeholder>
-            <v-progress-circular
-              indeterminate   
-            ></v-progress-circular>
+            <v-row class="fill-height ma-0" align="center" justify="center">
+              <v-progress-circular
+                indeterminate
+                color="gray lighten-5"
+              ></v-progress-circular>
+            </v-row>
           </template>
         </v-img>
       </v-col>
 
-      <v-col cols="8">
-        <v-card-title>{{ product.title }}</v-card-title>
-        <v-card-subtitle>${{ product.price }}</v-card-subtitle>
-        <v-card-actions>
-           <span class="text-subtitle-2 mr-2">Qty</span>
+      <v-col cols="8 d-flex flex-column justify-space-around">
+        <v-card-title class="pa-0">{{ product.title }}</v-card-title>
+        <v-card-subtitle class="pa-0 mt-n3">${{ product.price }}</v-card-subtitle>
+        <v-card-actions class="pa-0 mr-3 mb-n1">
+           <span class="text-subtitle-2 mr-2">Qty:</span>
            <v-btn
               class="ma-0 "
               style="min-width:1px;"
