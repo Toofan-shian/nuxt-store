@@ -9,5 +9,6 @@ export default defineNuxtConfig({
     vuetifyOptions: {
      
     },
-  }
+  },
+  debug: false
 })
