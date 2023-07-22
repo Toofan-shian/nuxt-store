@@ -1,5 +1,5 @@
 <template>
-  <v-card class="gb mb-6">
+  <v-card class="mb-6" style="border-width: 2px;border-radius: 7px; border-color:rgb(189, 189, 189)" flat>
     <v-row>
 
       <v-col cols="4">

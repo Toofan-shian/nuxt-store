@@ -1,23 +1,40 @@
 <template>
   <v-container class="">
     <v-row class="">
-      <h3 class="text-center text-h3 w-100 rb">Cart Items</h3>
+      <v-sheet
+      class="mx-auto mt-4 mb-7 rounded-xl d-flex flex-column justify-center align-center "
+      elevation="9"
+      height="128"
+      width="100%"
+    >
+      <H1 class=" text-h3  text-center align " >Cart Items</H1>
+    </v-sheet>
     </v-row>
 
-    <v-row class="gb">
-      <v-col
-        cols="8"
-        class="rb"
+    <v-row class="">
+      <v-sheet
+        class=" rounded-xl pa-6"
+        elevation="9"
+        width="100%"
       >
-        <cartItem v-for="(product, index) in products" :key="index" :product="product"></cartItem>
-      </v-col>
+        <v-row>
+          <v-col
+            cols="8"
+            class=""
+          >
+            <cartItem v-for="(product, index) in products" :key="index" :product="product"></cartItem>
+          </v-col>
+    
+          <v-col
+            cols="4"
+          >
 
-      <v-col
-        cols="4"
-      >
-        checkout
-      </v-col>
+            <Checkout></Checkout>
+          </v-col>
+        </v-row>
+      </v-sheet>
     </v-row>
+    
   </v-container>
 </template>
 
