@@ -7,7 +7,7 @@
       height="128"
       width="100%"
     >
-      <H1 class=" text-h3  text-center align " >Cart Items</H1>
+      <h1 class=" text-h3  text-center align " >Cart Items</h1>
     </v-sheet>
     </v-row>
 

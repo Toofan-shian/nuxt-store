@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar>
+  <v-app-bar class="pa-2">
 
     <v-toolbar-title @click="$router.push('/')">
       Shoping Site
@@ -7,18 +7,28 @@
 
     <v-spacer></v-spacer>
 
-    <v-btn @click="$router.push('/cart')" class="text-none" stacked>
-      <v-badge :content="23" color="error">
-        <v-icon>mdi-cart-outline</v-icon>
+    <v-btn
+      icon="mdi-weather-sunny"
+    >
+    </v-btn>
+
+    <v-btn stacked icon="mdi-cart-outline" class="icon">
+      <v-badge :content="23" color="error" class="ma-0 pa-0">
+        <v-icon class="pa-0">mdi-cart-outline</v-icon>
       </v-badge>
     </v-btn>
-    
 
     <v-btn
-      prependIcon="mdi-weather-sunny"
+      variant="text"
+      color="primary"
+      class=""
     >
-      Toggle Theme  
+      <v-icon start>mdi-message-alert-outline</v-icon>
+      Feedback
     </v-btn>
+
+    
+
   </v-app-bar>
 </template>
 
