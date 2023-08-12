@@ -12,7 +12,12 @@
     >
     </v-btn>
 
-    <v-btn stacked icon="mdi-cart-outline" class="icon">
+    <v-btn
+      stacked
+      icon="mdi-cart-outline"
+      class="icon"
+      @click="$router.push('/cart')"
+    >
       <v-badge :content="23" color="error" class="ma-0 pa-0">
         <v-icon class="pa-0">mdi-cart-outline</v-icon>
       </v-badge>
@@ -21,14 +26,10 @@
     <v-btn
       variant="text"
       color="primary"
-      class=""
     >
       <v-icon start>mdi-message-alert-outline</v-icon>
       Feedback
     </v-btn>
-
-    
-
   </v-app-bar>
 </template>
 

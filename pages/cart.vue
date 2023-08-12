@@ -43,6 +43,9 @@ import {useCartStore} from '../stores/cart'
 
 let store = useCartStore()
 let products = ref([])
+let totalPrice = ref(0)
+let itemsCount = ref(0)
+
 
 if (store.getCartItems) {
   products.value = store.getCartItems

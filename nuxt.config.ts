@@ -10,5 +10,8 @@ export default defineNuxtConfig({
      
     },
   },
+  routeRules: {
+    // '/cart': {redirect: '/' },
+  },
   debug: false
 })

@@ -1,12 +1,16 @@
 <template>
-  <v-app id="inspire">
+  <v-app>
     <Header/>
     <v-main>
-      <v-container>
-        <RouterView></RouterView>
-      </v-container>
+        <NuxtPage/>
     </v-main>
   </v-app>
+
+
+
+  <!-- <div>
+    <NuxtPage/>
+  </div> -->
 </template>
 
 <style>
