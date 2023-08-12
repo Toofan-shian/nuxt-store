@@ -2,10 +2,16 @@
   <v-app-bar class="pa-2">
 
     <v-toolbar-title @click="$router.push('/')">
-      Shoping Site
+      Nuxify Shop
     </v-toolbar-title>
 
     <v-spacer></v-spacer>
+
+    <v-btn
+      class="text"
+      text="Products"
+      @click="$router.push('/products')"
+    ></v-btn>
 
     <v-btn
       icon="mdi-weather-sunny"
@@ -23,13 +29,6 @@
       </v-badge>
     </v-btn>
 
-    <v-btn
-      variant="text"
-      color="primary"
-    >
-      <v-icon start>mdi-message-alert-outline</v-icon>
-      Feedback
-    </v-btn>
   </v-app-bar>
 </template>
 

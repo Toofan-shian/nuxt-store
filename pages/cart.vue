@@ -1,14 +1,14 @@
 <template>
   <v-container class="">
-    <v-row class="">
+    <v-row class="mt-3">
       <v-sheet
       class="mx-auto mt-4 mb-7 rounded-xl d-flex flex-column justify-center align-center "
       elevation="9"
       height="128"
       width="100%"
-    >
-      <h1 class=" text-h3  text-center align " >Cart Items</h1>
-    </v-sheet>
+      >
+        <h1 class=" text-h3  text-center align " >Cart Items</h1>
+      </v-sheet>
     </v-row>
 
     <v-row class="">
