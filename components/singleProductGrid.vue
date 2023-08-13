@@ -3,7 +3,7 @@
     <v-img :src="product.thumbnail" class="" height="200" cover>
       <template v-slot:placeholder>
         <v-row
-          class="full-height d-flex align-center justify-center ma-0"
+          class="h-100 d-flex align-center justify-center ma-0"
         >
           <v-progress-circular
             indeterminate

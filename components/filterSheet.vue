@@ -2,7 +2,7 @@
   <v-sheet class="">
 
     <v-row
-      class="flex-column pr-4"
+      class="flex-column pr-10"
       no-gutters
     >
       <!-- PRICE -->

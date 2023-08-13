@@ -84,7 +84,10 @@
                 sm="6"
                 lg="4"
               >
-                <singleProductGrid :product="product"/>
+                <singleProductGrid
+                  :product="product"
+                  class=""
+                />
               </v-col>
             </v-row>
 
@@ -92,10 +95,14 @@
               v-show="!grid"
               v-for="(product, index) in products"
               :key="index"
-              class="border-r"
+              class="bg-grey-lighten-5 rounded-lg mb-4 single-product-list"
               no-gutters
+
             >
-              <singleProductList :product="product"/>
+              <singleProductList
+                :product="product"
+                class=""
+              />
             </v-row>
           </div>
         </v-col>
@@ -106,7 +113,7 @@
 
 <script setup lang="ts">
 
-import {useCartStore} from '../stores/cart'
+import {useCartStore} from '@/stores/cart'
 
 let products = ref([])
 let grid = ref(false)
@@ -130,5 +137,10 @@ let sortItems = ref([
 </script>
 
 <style scoped>
-
+/* .single-product-list {
+  border: 1px solid rgb(209, 209, 209);
+} */
+/* .single-product-list:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+} */
 </style>
