@@ -2,9 +2,14 @@
   <div class="mt-4">
     <v-container>
 
-      <!-- display -->
-      <v-row class="my-5">
-        <v-col cols="12">
+      <!-- layout and search -->
+      <v-row class="my-5" no-gutters>
+
+        <v-col
+          cols="4"
+          class="d-flex align-center "
+        >
+          <span class="text-h5 mr-5">Layout </span>
           <v-btn @click="grid = !grid" :class="{'bg-primary': !grid}">
             <v-icon>mdi-view-list</v-icon>
           </v-btn>
@@ -12,111 +17,87 @@
             <v-icon>mdi-apps</v-icon>
           </v-btn>
         </v-col>
-      </v-row>
 
-      <!-- products -->
-      <v-row v-if="!products.length">
-        <v-col cols="12">
-          <h3 class="text-center">Loading...</h3>
+        <v-col
+          cols="5"
+          class="pr-4 "
+        >
+          <v-text-field
+            hide-details
+            append-inner-icon="mdi-magnify"
+            variant="outlined"
+            placeholder="Search Here..."
+            class=""
+            clearable
+            :model-value="searchValue"
+            rounded
+          ></v-text-field>
+        </v-col>
+
+        <v-col
+          cols="3"
+          class=" "
+        >
+          <v-select
+            rounded
+            v-model="sortModel"
+            :items="sortItems"
+            variant="outlined"
+            hide-details
+            label="Sort By"
+          ></v-select>
         </v-col>
       </v-row>
 
-      <v-row v-else>
-        <v-col cols="12">
 
-          <v-row v-show="grid">
-            <v-col
+
+      <v-row class="mt-0" no-gutters> 
+        <!-- Filters -->
+        <v-col
+          cols="4"
+          class=""
+        >
+          <filterSheet/>
+        </v-col>
+
+        <!-- products -->
+        <v-col cols="8" class="">
+
+
+          <!-- lOADING... -->
+          <v-row v-if="!products.length" class="mt-8">
+            <v-col cols="12">
+              <h3 class="text-center">Loading...</h3>
+            </v-col>
+          </v-row>
+
+
+          <div v-else>
+            <v-row
+              v-show="grid"
+              class=""
+            >
+              <v-col
+                v-for="(product, index) in products"
+                :key="index"
+                cols="12"
+                sm="6"
+                lg="4"
+              >
+                <singleProductGrid :product="product"/>
+              </v-col>
+            </v-row>
+
+            <v-row
+              v-show="!grid"
               v-for="(product, index) in products"
               :key="index"
-              cols="12"
-              sm="6"
-              lg="4"
+              class="border-r"
+              no-gutters
             >
-              <v-card class="rb mx-auto pb-2">
-                <v-img :src="product.thumbnail" class="" height="200" cover>
-                  <template v-slot:placeholder>
-                    <v-row
-                      align="center"
-                      class="full-height ma-0"
-                      justify="center"
-                    >
-                      <v-progress-circular
-                        indeterminate
-                        color="gray lighten-5"
-                      ></v-progress-circular>
-                    </v-row>
-                  </template>
-                </v-img>
-
-                <v-card-title
-                  class="text-capitalize"
-                >
-                  {{ product.title }}
-                </v-card-title>
-
-                <v-card-subtitle>
-                  ${{ product.price }}
-                </v-card-subtitle>
-
-                <v-card-actions
-
-                >
-                  <v-btn
-                    color="primary"
-                  >
-                    Read More
-                  </v-btn>
-                  <v-spacer></v-spacer>
-                  <v-btn
-                    @click="cartStore.add(product.id)"
-                    class="bg-primary"
-                  >
-                    add to cart
-                  </v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-col>
-          </v-row>
-
-          <v-row
-            v-show="!grid"
-            v-for="(product, index) in products"
-            :key="index"
-            class="rb"
-          >
-            <v-col
-              cols="4"
-            >
-              <v-img :src="product.thumbnail" height="200" cover>
-                <template v-slot:placeholder>
-                  <v-row class="fill-height ma-0" align="center" justify="center">
-                    <v-progress-circular
-                      indeterminate
-                      color="gray lighten-5"
-                    ></v-progress-circular>
-                  </v-row>
-                </template>
-              </v-img>
-            </v-col>
-
-            <v-col cols="8">
-              <v-card-title class="text-capitalize">
-                {{ product.title }}
-              </v-card-title>
-              <v-card-subtitle>{{ product.price }}</v-card-subtitle>
-              <v-card-text>
-                {{ product.description }}
-              </v-card-text>
-              <v-card-actions>
-                <v-btn color="primary">
-                  read more
-                </v-btn>
-                <v-btn @click="cartStore.add(product.id)" class="bg-primary">
-                  add to cart
-                </v-btn>
-              </v-card-actions>
-            </v-col>
-          </v-row>
+              <singleProductList :product="product"/>
+            </v-row>
+          </div>
         </v-col>
       </v-row>
     </v-container>
@@ -136,6 +117,16 @@ cartStore.fetchProducts()
   products.value = cartStore.getAllProducts
   console.log('products injected')
   })
+
+let searchValue = ref('')
+let sortModel = ref()
+let sortItems = ref([
+  {title: 'Price: Low-Hight', value: 'lh'},
+  {title: 'Price: High-Low', value: 'hl'},
+  {title: 'Highest Rating', value: 'hr'},
+  {title: 'Highest Discount', value: 'hd'},
+  {title: 'Alphabet: A-Z', value: 'az'},
+])
 </script>
 
 <style scoped>

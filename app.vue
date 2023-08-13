@@ -14,10 +14,10 @@
 </template>
 
 <style>
-.rb {
+.border-r {
   border: 1px solid red;
 }
-.gb {
+.border-g {
   border: 1px solid green;
 }
 </style>
