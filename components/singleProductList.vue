@@ -1,8 +1,7 @@
 <template>
   <v-card
-    class="w-100"
+    class="product-card-list w-100"
     hover
-    variant="outlined"
     :to="`/products/${product.id}`"
   >
     <v-row
@@ -29,19 +28,38 @@
         </v-img>
       </v-col>
 
-      <v-col cols="8">
-        <v-card-title class="text-capitalize">
+      <v-col
+        cols="8"
+        class="d-flex flex-column space-between"
+      >
+
+        <v-card-title
+          class="text-capitalize mt-1"
+        >
           {{ product.title }}
         </v-card-title>
-        <v-card-subtitle>${{ product.price }}</v-card-subtitle>
-        <v-card-text>
+
+        <v-card-subtitle
+          class="mt-n2 "
+        >
+          ${{ product.price }}
+        </v-card-subtitle>
+
+        <v-card-text
+          class=""
+        >
           {{ product.description }}
         </v-card-text>
-        <v-card-actions>
-          <v-btn color="primary">
-            read more
-          </v-btn>
-          <v-btn @click.prevent="cartStore.add(product.id)" class="bg-primary">
+        
+        <v-card-actions
+          class="d-flex justify-end mb-2 mx-7"
+        >
+          <v-btn
+            @click.prevent="cartStore.add(product.id)"
+            class="w-100"
+            variant="outlined"
+            color="primary"
+          >
             add to cart
           </v-btn>
         </v-card-actions>
@@ -67,5 +85,8 @@ let goToDetails = () => {
 </script>
 
 <style lang="scss" scoped>
-
+.product-card-list {
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 12px;
+}
 </style>
