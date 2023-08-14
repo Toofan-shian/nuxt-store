@@ -1,5 +1,8 @@
 <template>
-  <v-card class=" mx-auto pb-2">
+  <v-card
+    class="product-card-grid mx-auto pb-2"
+    :to="`/products/${product.id}`"
+  >
     <v-img :src="product.thumbnail" class="" height="200" cover>
       <template v-slot:placeholder>
         <v-row
@@ -19,22 +22,24 @@
       {{ product.title }}
     </v-card-title>
 
-    <v-card-subtitle>
+    <v-card-subtitle class="mt-n3">
       ${{ product.price }}
     </v-card-subtitle>
 
-    <v-card-actions
+    <v-card-text
+      class='card-text text-truncate'
+    >
+      {{ product.description }}
+    </v-card-text>
 
+    <v-card-actions
+      class="px-3"
     >
       <v-btn
-        color="primary"
-      >
-        Read More
-      </v-btn>
-      <v-spacer></v-spacer>
-      <v-btn
         @click="addToCart"
-        class="bg-primary"
+        color="primary"
+        variant="outlined"
+        class="w-100"
       >
         add to cart
       </v-btn>
@@ -49,5 +54,11 @@ let addToCart = () => console.log('add product')
 </script>
 
 <style scoped>
-
+.product-card-grid {
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 12px;
+}
+.card-text {
+  height: 3rem;
+}
 </style>
