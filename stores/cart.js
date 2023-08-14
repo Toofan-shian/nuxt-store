@@ -53,6 +53,9 @@ export const useCartStore = defineStore('cart', {
     getCartItems() {
       console.log('getting cart items')
       return this.cartContent
+    },
+    getProductById: (state) => {
+      return (id) => state.products.find(p => p.id == id)
     }
   },
   actions: {
