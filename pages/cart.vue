@@ -1,15 +1,6 @@
 <template>
-  <v-container class="">
-    <v-row class="mt-3">
-      <v-sheet
-      class="mx-auto mt-4 mb-7 rounded-xl d-flex flex-column justify-center align-center "
-      elevation="9"
-      height="128"
-      width="100%"
-      >
-        <h1 class=" text-h3  text-center align " >Cart Items</h1>
-      </v-sheet>
-    </v-row>
+  <v-container class="mt-14">
+
 
     <v-row class="">
       <v-sheet
@@ -17,6 +8,21 @@
         elevation="9"
         width="100%"
       >
+        <v-row class="mt-2">
+          <div
+            class="mb-7 mx-auto"
+            width="100%"
+          >
+            <h1 class="cart-title text-h3  text-center" >Cart Items</h1>
+          </div>
+        </v-row>
+
+        <v-divider
+          :thickness="2"
+          class="mx-9 border-opacity-25 mb-10"
+          color="grey-lighten-2"
+        ></v-divider>
+
         <v-row>
           <v-col
             cols="8"
@@ -54,5 +60,7 @@ if (store.getCartItems) {
 </script>
 
 <style scoped>
+.cart-title {
 
+}
 </style>
