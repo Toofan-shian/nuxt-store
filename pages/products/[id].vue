@@ -1,23 +1,24 @@
 <template>
-  <v-container class="mt-12 justify-center">
+  <v-container class="h-100 justify-center align-center d-flex">
     <v-row
       v-if="!product"
     >
       Loading...
     </v-row>
 
-    <v-row v-else class="" no-gutters>
+    <v-row v-else class="align-center d-flex justify-center" no-gutters>
       <v-sheet
         elevation="2"
         rounded
-        class="w-100 pa-11 rounded-lg "
+        class="w-100 h-100 pa-11 rounded-lg "
       >
-        <v-row>
+        <v-row no-gutters>
           <v-col
             cols="7"
             class=""
           >
             <productDetailsCarousel :images="product.images" />
+            
           </v-col>
     
           <v-col
@@ -59,7 +60,6 @@
               </v-expansion-panel>
             </v-expansion-panels>
           </v-col>
-
         </v-row>
       </v-sheet>
     </v-row>
