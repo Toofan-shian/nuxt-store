@@ -1,19 +1,34 @@
 <template>
-  <div class="mt-4">
-    <v-container>
-
+  <v-container class="mt-10">
+    <v-sheet
+      class="px-10 rounded-lg"
+      elevation="3"
+    >
+      <h3
+        class="text-center py-8 text-h3"
+      >
+        All Products
+      </h3>
       <!-- layout and search -->
-      <v-row class="my-5" no-gutters>
+      <v-row class="mb-9" no-gutters>
 
         <v-col
           cols="4"
           class="d-flex align-center "
         >
-          <span class="text-h5 mr-5">Layout </span>
-          <v-btn @click="grid = !grid" :class="{'bg-primary': !grid}">
+          <span class="text-h6 mr-5">Layout </span>
+          <v-btn
+            @click="grid = !grid"
+            :class="{'bg-info': !grid}"
+          >
+
             <v-icon>mdi-view-list</v-icon>
           </v-btn>
-          <v-btn @click="grid = !grid" :class="{'bg-primary': grid}" class="ml-5">
+          <v-btn
+            @click="grid = !grid"
+            :class="{'bg-info': grid}"
+            class="ml-5"
+          >
             <v-icon>mdi-apps</v-icon>
           </v-btn>
         </v-col>
@@ -107,8 +122,8 @@
           </div>
         </v-col>
       </v-row>
-    </v-container>
-  </div>
+    </v-sheet>
+  </v-container>
 </template>
 
 <script setup lang="ts">
@@ -142,5 +157,8 @@ let sortItems = ref([
 } */
 /* .single-product-list:hover {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+} */
+/* .layout-select {
+  background-color: rgba(0, 119, 255, 0.274);
 } */
 </style>

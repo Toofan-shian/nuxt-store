@@ -58,7 +58,7 @@
             @click.prevent="cartStore.add(product.id)"
             class="w-100"
             variant="outlined"
-            color="primary"
+            color="green-darken-2"
           >
             add to cart
           </v-btn>

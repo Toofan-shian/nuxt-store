@@ -1,6 +1,5 @@
 <template>
   <v-sheet class="">
-
     <v-row
       class="flex-column pr-10"
       no-gutters
@@ -24,10 +23,11 @@
 
       <!-- CATEGORY -->
       <v-select
+        rounded
         v-model="selectCategory"
         :items="categoryItems"
         variant="outlined"
-        class=""
+        class="rounded-lg"
       ></v-select>
     </v-row>
   </v-sheet>
