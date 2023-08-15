@@ -1,6 +1,6 @@
 <template>
   <v-carousel
-    class=""
+    class="pr-3"
     :show-arrows="false"
     :model-value="carouselModel"
     hide-delimiters
@@ -14,6 +14,7 @@
       <v-img :src="img" class="w-100 h-100" ></v-img>
     </v-carousel-item>
   </v-carousel>
+  <carouselItemsRow :images="images"/>
 </template>
 
 <script setup lang="ts">

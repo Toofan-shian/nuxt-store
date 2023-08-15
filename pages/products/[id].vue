@@ -6,7 +6,7 @@
       Loading...
     </v-row>
 
-    <v-row v-else class=" h-min" no-gutters>
+    <v-row v-else class="" no-gutters>
       <v-sheet
         elevation="2"
         rounded
@@ -25,7 +25,7 @@
             class="d-flex flex-column pl-5"
           >
             <h3
-              class="text-h3 mt-8 "
+              class="text-h3 mt-4 "
             >
               {{ product.title }}
             </h3>
