@@ -4,8 +4,8 @@
 
     <v-row class="">
       <v-sheet
-        class=" rounded-xl pa-6"
-        elevation="9"
+        class=" rounded-xl py-6 px-10"
+        elevation="3"
         width="100%"
       >
         <v-row class="mt-2">

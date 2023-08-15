@@ -1,5 +1,5 @@
 <template>
-  <v-card class="" style="border-width: 2px;border-radius: 7px; border-color:rgb(189, 189, 189)">
+  <v-card class="card-border" flat>
     
     <v-card-title
       class="text-center pt-3 pb-5"

@@ -15,9 +15,9 @@
 </template>
 
 <style>
-.footer {
+/* .footer {
   max-height: 10px;
-}
+} */
 .vuetify-main {
  padding-top: 80px;
 }
@@ -26,5 +26,9 @@
 }
 .border-g {
   border: 1px solid green;
+}
+.card-border {
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 12px;
 }
 </style>

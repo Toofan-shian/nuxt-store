@@ -1,7 +1,9 @@
 <template>
-  <v-card class="mb-6" style="border-width: 2px;border-radius: 7px; border-color:rgb(189, 189, 189)" flat>
+  <v-card
+    class="cartItem mb-6"
+    hover
+  >
     <v-row>
-
       <v-col cols="4">
         <v-img :src="product.thumbnail" class="" height="150" cover>
           <template v-slot:placeholder>
@@ -15,9 +17,12 @@
         </v-img>
       </v-col>
 
-      <v-col cols="8 d-flex flex-column justify-space-around">
+      <v-col
+        cols="8"
+        class="d-flex flex-column justify-space-around"
+      >
         <v-card-title class="pa-0">{{ product.title }}</v-card-title>
-        <v-card-subtitle class="pa-0 mt-n3">${{ product.price }}</v-card-subtitle>
+        <v-card-subtitle class="pa-0 mt-n5">${{ product.price }}</v-card-subtitle>
         <v-card-actions class="pa-0 mr-3 mb-n1">
            <span class="text-subtitle-2 mr-2">Qty:</span>
            <v-btn
@@ -40,7 +45,7 @@
 
            <v-spacer></v-spacer>
 
-           <v-btn class="text ma-0" size="small" >remove</v-btn>
+           <v-btn class="ma-0" size="small" variant="plain" color="red-lighten-2" >remove</v-btn>
         </v-card-actions>
       </v-col>
     </v-row>
@@ -52,5 +57,8 @@ const props = defineProps(['product'])
 </script>
 
 <style scoped>
-
+.cartItem {
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 12px;
+}
 </style>
