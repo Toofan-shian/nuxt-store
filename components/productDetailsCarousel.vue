@@ -11,7 +11,8 @@
         :key="index"
         class=""
       >
-        <v-img :src="img" class="w-100 h-100" ></v-img>
+        <v-img :src="img" class="w-100 h-100 py-2"
+        ></v-img>
       </v-carousel-item>
     </v-carousel>
   

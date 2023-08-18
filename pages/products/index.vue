@@ -1,14 +1,27 @@
 <template>
   <v-container class="mt-10">
     <v-sheet
-      class="px-10 rounded-lg"
+      class="px-10 rounded-lg pb-14"
       elevation="3"
     >
-      <h3
-        class="text-center py-8 text-h3"
+      <v-row
+        class="justify-center align-center"
+        no-gutters
       >
-        All Products
-      </h3>
+        <h2
+          class="text-center text-h3 py-11"
+        >
+          All Products
+        </h2>
+        <v-icon
+          icon="mdi-arrow-down"
+          size="small"
+          class="ml-3 mt-1"
+        ></v-icon>
+        <v-divider
+          class="mt-n16 mx-14"
+        ></v-divider>
+      </v-row>
       <!-- layout and search -->
       <v-row class="mb-9" no-gutters>
 
@@ -110,7 +123,7 @@
               v-show="!grid"
               v-for="(product, index) in products"
               :key="index"
-              class="bg-grey-lighten-5 rounded-lg mb-4 single-product-list"
+              class="bg-grey-lighten-5 rounded-lg mb-7 single-product-list"
               no-gutters
 
             >
@@ -148,6 +161,15 @@ let sortItems = ref([
   {title: 'Highest Rating', value: 'hr'},
   {title: 'Highest Discount', value: 'hd'},
   {title: 'Alphabet: A-Z', value: 'az'},
+])
+
+let selectCategory = ref('All Products')
+let categoryItems = ref([
+  {title: "All Products", value: "ap"},
+  {title: "Women's Dress", value: 'wd'},
+  {title: "women's Shoes", value: 'ws'},
+  {title: "Men's Shirts", value: 'mshirts'},
+  {title: "Men's Shoes", value: 'mshoes'}
 ])
 </script>
 

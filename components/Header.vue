@@ -1,5 +1,8 @@
 <template>
-  <v-app-bar class="pa-2">
+  <v-app-bar
+    class="pa-2"
+    elevation="3"
+  >
 
     <v-toolbar-title @click="$router.push('/')">
       Nuxify Shop

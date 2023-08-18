@@ -1,10 +1,8 @@
 <template>
   <v-container class="mt-14">
-
-
     <v-row class="">
       <v-sheet
-        class=" rounded-xl py-6 px-10"
+        class=" rounded-xl pt-6 pb-13 px-10"
         elevation="3"
         width="100%"
       >

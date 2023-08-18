@@ -1,16 +1,15 @@
 <template>
   <v-carousel
-    
-    height="400"
     hide-delimiter-background
     show-arrows="hover"
   >
     <v-carousel-item
-      v-for="(slide, i) in slides"
+      v-for="(image, i) in images"
       :key="i"
-    >
-      <v-sheet
-        :color="colors[i]"
+    > 
+      <div class="bg-grey w-100 h-100"></div>
+      <!-- <v-img class="w-100 h-100" :src="image" cover></v-img> -->
+      <!-- <v-sheet
         height="100%"
       >
         <div class="d-flex fill-height justify-center align-center">
@@ -18,24 +17,16 @@
             {{ slide }} Slide
           </div>
         </div>
-      </v-sheet>
+      </v-sheet> -->
     </v-carousel-item>
   </v-carousel>
 </template>
 
 <script setup>
-let colors = ref([
-          'grey-darken-3',
-          'warning',
-          'pink darken-2',
-          'red lighten-1',
-          'deep-purple accent-4',
-        ])
-let slides = ref([
-          'First',
-          'Second',
-          'Third',
-          'Fourth',
-          'Fifth',
+let images = ref([
+          '/mens-cloth.png',
+          '/womens-shoes.png',
+          '/mens-shoes.png',
+          '/womens-cloth.png',
         ])
 </script>

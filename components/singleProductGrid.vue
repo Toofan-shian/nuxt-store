@@ -37,7 +37,7 @@
     >
       <v-btn
         @click="addToCart"
-        color="primary"
+        color="green-darken-2"
         variant="outlined"
         class="w-100"
       >
@@ -55,6 +55,7 @@ let addToCart = () => console.log('add product')
 
 <style scoped>
 .product-card-grid {
+  max-width: 250px;
   border: 1px solid rgb(189, 189, 189);
   border-radius: 12px;
 }

@@ -56,15 +56,23 @@ export const useCartStore = defineStore('cart', {
     },
     getProductById: (state) => {
       return (id) => state.products.find(p => p.id == id)
+    },
+    getHomeDiscounts() {
+      let discProducts = this.products.filter(p => {
+        return p.discountPercentage ? p : false
+      })
+      console.log(discProducts)
+      let homeDiscounts = discProducts.slice(0, 6)
+      return homeDiscounts
     }
   },
   actions: {
     async fetchProducts() {
       try {
-        console.log('fetching...')
+        console.log('fetching all products...')
         let {data} = await useFetch('https://dummyjson.com/products')
         this.products = data.value.products
-        console.log('fetched')
+        console.log('all products fetched')
       } catch (error) {
         throw(error)
       }
