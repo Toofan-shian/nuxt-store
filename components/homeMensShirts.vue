@@ -11,7 +11,9 @@
           elevation="1"
           >
           <!-- TITLE -->
-          <h1 class="text-center pa-9">The End Of Year Discounts</h1>
+          <h1 class="text-center pa-9 text-capitalize">
+            gretest men's shirts collection
+          </h1>
     
           
           <!-- PRODUCTS -->
@@ -39,7 +41,7 @@
               class="mx-auto"
               color="black"
             >
-              check all discounts
+              check all Men's shirts
             </v-btn>
           </div>
         </v-sheet>

@@ -13,6 +13,7 @@
 
 <style lang="scss" scoped>
 .site-footer {
-  max-height: 55px;
+  min-height: 74px;
+  max-height: 74px;
 }
 </style>

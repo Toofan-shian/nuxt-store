@@ -2,6 +2,7 @@
   <v-carousel
     hide-delimiter-background
     show-arrows="hover"
+    height="350"
   >
     <v-carousel-item
       v-for="(image, i) in images"

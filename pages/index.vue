@@ -1,9 +1,10 @@
 <template>
   <div>
     <carousel/>
-    <v-container class="pb-9">
-      <homeDiscounts/>
-    </v-container>
+    <homeDiscounts/>
+    <homeParallax/>
+    <HomeMensShirts/>
+    <!-- <div style="height: 1400px;"></div> -->
   </div>
 </template>
 
