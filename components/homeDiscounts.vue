@@ -23,7 +23,7 @@
             :key="index"
           >
             <div class="mx-4">
-              <singleProductGrid :product="p" class=""></singleProductGrid>
+              <HomeSingleProduct :product="p" class=""></HomeSingleProduct >
             </div>
           </v-slide-group-item>
         </v-slide-group>
