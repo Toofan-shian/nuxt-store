@@ -1,24 +1,24 @@
 <template>
   <v-container
-    class="py-10 my-10"
+    class="py-10"
   >
     <v-row class="">
       <v-col cols="12">
-
+        <!-- TITLE -->
+        <h1 class="text-center text-h3 font-waight-black py-9 text-capitalize">
+          Women's Clothing
+        </h1>
+  
+        <!-- PRODUCTS SLIDER-->
         <v-sheet
-          class="discounts order"
-          rounded
-          elevation="1"
-          >
-          <!-- TITLE -->
-          <h1 class="text-center pa-9">The End Of Year Discounts</h1>
-    
-          
-          <!-- PRODUCTS -->
+          elevation="2"
+          class="py-9 rounded-lg"
+        >
           <v-slide-group
-            class=""
+            class="slider"
             show-arrows
             center-active
+            
           >
             <v-slide-group-item
               v-for="(p, index) in homeDiscounts"
@@ -29,21 +29,20 @@
               </div>
             </v-slide-group-item>
           </v-slide-group>
-    
-    
-          <!-- ACTION -->
-          <div class="d-flex justify-center pt-9 pb-14">
-            <v-btn
-              elevation="1"
-              variant="outlined"
-              class="mx-auto"
-              color="black"
-            >
-              check all discounts
-            </v-btn>
-          </div>
         </v-sheet>
-
+  
+  
+        <!-- ACTION -->
+        <div class="d-flex justify-center py-7 mt-2">
+          <v-btn
+            elevation="1"
+            variant="outlined"
+            class="mx-auto"
+            color="black"
+          >
+            check all womene's clothing
+          </v-btn>
+        </div>
       </v-col>
     </v-row>
   </v-container>
@@ -66,9 +65,5 @@ cartStore.fetchProducts()
 </script>
 
 <style scoped>
-.discounts {
-  background-color: rgb(247, 247, 247);
-  border: 1px solid rgb(214, 214, 214);
-  border-radius: 13px;
-}
+
 </style>

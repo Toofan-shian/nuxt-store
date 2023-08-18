@@ -3,7 +3,7 @@
     class="bg-grey-darken-3 site-footer"
     :elevation="10"
   >
-    <v-row class="d-flex flex-column align-center justify-center py-1" no-gutters>
+    <v-row class="d-flex flex-column align-center justify-center" no-gutters>
 
       
       <h3
