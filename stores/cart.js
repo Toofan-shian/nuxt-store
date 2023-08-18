@@ -61,7 +61,6 @@ export const useCartStore = defineStore('cart', {
       let discProducts = this.products.filter(p => {
         return p.discountPercentage ? p : false
       })
-      console.log(discProducts)
       let homeDiscounts = discProducts.slice(0, 6)
       return homeDiscounts
     }
