@@ -11,7 +11,8 @@
     <v-spacer></v-spacer>
 
     <v-btn
-      class="text"
+      class="font-weight-bold"
+      color="grey-darken-3"
       text="Products"
       @click="$router.push('/products')"
     ></v-btn>

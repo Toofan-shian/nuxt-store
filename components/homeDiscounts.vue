@@ -11,7 +11,7 @@
   
         <!-- PRODUCTS SLIDER-->
         <v-sheet
-          elevation="2"
+          elevation="1"
           class="py-9 rounded-lg"
         >
           <v-slide-group
@@ -33,7 +33,7 @@
   
   
         <!-- ACTION -->
-        <div class="d-flex justify-center py-7 mt-2">
+        <div class="d-flex justify-center py-7 my-2">
           <v-btn
             elevation="1"
             variant="outlined"

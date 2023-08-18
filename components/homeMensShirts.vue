@@ -1,6 +1,6 @@
 <template>
   <v-container
-    class="py-10 my-10"
+    class="py-10"
   >
     <v-row class="">
       <v-col cols="12">
@@ -33,7 +33,7 @@
   
   
         <!-- ACTION -->
-        <div class="d-flex justify-center pt-9 mt-1">
+        <div class="d-flex justify-center py-9 mt-1">
           <v-btn
             elevation="1"
             variant="outlined"
