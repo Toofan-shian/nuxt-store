@@ -4,39 +4,24 @@
       class="px-10 rounded-lg pb-14"
       elevation="3"
     >
-
-      <!-- CATEGORY -->
       <v-row
         class="justify-center align-center"
         no-gutters
       >
-        <div>
-          <v-select
-            rounded
-            v-model="selectCategory"
-            :items="categoryItems"
-            variant="underlined"
-            class="rounded-lg"
-          >
-            <v-lable>kos</v-lable>
-          </v-select>
-        </div>
-        <!-- <h2
+        <h2
           class="text-center text-h3 py-11"
         >
           All Products
-        </h2> -->
-        <!-- <v-icon
+        </h2>
+        <v-icon
           icon="mdi-arrow-down"
           size="small"
           class="ml-3 mt-1"
-        ></v-icon> -->
-        <!-- <v-divider
+        ></v-icon>
+        <v-divider
           class="mt-n16 mx-14"
-        ></v-divider> -->
+        ></v-divider>
       </v-row>
-
-
       <!-- layout and search -->
       <v-row class="mb-9" no-gutters>
 

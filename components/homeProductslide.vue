@@ -6,7 +6,7 @@
       <v-col cols="12">
         <!-- TITLE -->
         <h1 class="text-center text-h3 font-waight-black py-9 text-capitalize">
-          men's shirts collection
+          <slot name="title"></slot>
         </h1>
   
         <!-- PRODUCTS SLIDER-->
@@ -33,15 +33,16 @@
   
   
         <!-- ACTION -->
-        <div class="d-flex justify-center py-9 mt-1">
+        <div class="d-flex justify-center py-7 my-2">
           <v-btn
             elevation="1"
             variant="outlined"
             class="mx-auto"
             color="black"
           >
-            check all Men's shirts
+            <slot name="action"></slot>
           </v-btn>
+
         </div>
       </v-col>
     </v-row>

@@ -1,10 +1,26 @@
 <template>
   <div>
     <carousel/>
-    <homeDiscounts/>
+
+    <homeProductslide>
+      <template v-slot:action>
+        view all women's products
+      </template>
+      <template v-slot:title>
+        women's clothing
+      </template>
+    </homeProductslide>
+
     <homeParallax/>
-    <HomeMensShirts/>
-    <!-- <div style="height: 1400px;"></div> -->
+
+    <homeProductslide>
+      <template v-slot:action>
+        view all men's products
+      </template>
+      <template v-slot:title>
+        men's shirts
+      </template>
+    </homeProductslide>
   </div>
 </template>
 

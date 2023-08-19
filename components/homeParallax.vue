@@ -1,5 +1,5 @@
 <template>
-  <v-parallax src="/8.jpg" height="400">
+  <v-parallax src="/shirts.jpg" height="400">
     <v-row class="w-100 parallax-overlay h-100 flex-column justify-center align-center ma-0">
       <h2
         class="text-h2 text-white font-weight-black pb-8"
