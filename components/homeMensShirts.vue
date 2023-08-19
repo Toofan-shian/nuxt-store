@@ -11,7 +11,7 @@
   
         <!-- PRODUCTS SLIDER-->
         <v-sheet
-          elevation="2"
+          elevation="1"
           class="py-9 rounded-lg"
         >
           <v-slide-group

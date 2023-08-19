@@ -1,6 +1,6 @@
 <template>
   <v-card
-    class="product-card-grid mx-auto pb-4"
+    class="product-card-grid mx-auto my-2 pb-4"
     :to="`/products/${product.id}`"
     elevation="2"
   >
