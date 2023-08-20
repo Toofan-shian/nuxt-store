@@ -41,6 +41,6 @@ let links = ref([
 <style lang="scss" scoped>
 .site-footer {
   min-height: 74px;
-  // max-height: 74px;
+  max-height: 74px;
 }
 </style>

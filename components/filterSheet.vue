@@ -20,15 +20,6 @@
           :hint="`From $${PriceRange[0]} To $${PriceRange[1]}`"
         ></v-range-slider>
       </div>
-
-      <!-- CATEGORY -->
-      <v-select
-        rounded
-        v-model="selectCategory"
-        :items="categoryItems"
-        variant="outlined"
-        class="rounded-lg"
-      ></v-select>
     </v-row>
   </v-sheet>
 </template>
