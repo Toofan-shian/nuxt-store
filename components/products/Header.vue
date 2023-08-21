@@ -149,10 +149,8 @@ let grid = ref(true)
 let selectCategory = ref('All Products')
 let categoryItems = ref([
   {title: "All Products", value: "ap"},
-  {title: "Women's Dress", value: 'wd'},
-  {title: "women's Shoes", value: 'ws'},
-  {title: "Men's Shirts", value: 'mshirts'},
-  {title: "Men's Shoes", value: 'mshoes'}
+  {title: "Womens Dresses", value: 'wd'},
+  {title: "Mens Shirts", value: 'mshirts'},
 ])
 
 let searchValue = ref('')

@@ -68,14 +68,15 @@ export const useCartStore = defineStore('cart', {
   actions: {
     async fetchProducts() {
       if (this.products.length > 0) {
-        console.log(this.products)
         return
       };
       try {
-        console.log('fetching all products...')
-        let {data} = await useFetch('https://dummyjson.com/products')
-        this.products = data.value.products
-        console.log('all products fetched')
+        console.log('fetching all products (store)...')
+        
+        let {data} = await useFetch('/api/products')
+        this.products = data.value
+
+        console.log('all products fetched (store)')
       } catch (error) {
         throw(error)
       }
