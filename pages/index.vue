@@ -1,6 +1,6 @@
 <template>
   <div>
-    <carousel/>
+    <homeCarousel/>
 
     <homeProductslide>
       <template v-slot:action>
@@ -21,6 +21,8 @@
         men's shirts
       </template>
     </homeProductslide>
+
+
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <v-card class="card-border" flat>
+  <v-card class="card-border elevation-1" flat>
     
     <v-card-title
       class="text-center pt-3 pb-5"

@@ -1,5 +1,5 @@
 <template>
-  <v-container class="h-100 justify-center align-center d-flex">
+  <v-container class="h-100 justify-center align-center d-flex mb-16">
     <v-row
       v-if="!product"
     >
@@ -17,8 +17,7 @@
             cols="7"
             class=""
           >
-            <productDetailsCarousel :images="product.images" />
-            
+            <productsDetailsCarousel :images="product.images" />
           </v-col>
     
           <v-col
@@ -33,7 +32,8 @@
     
             <p
               class="text-h6 mt-2"
-            >${{ product.price }}</p>
+            >${{ product.price }}
+            </p>
     
             <p
               class="mt-8"

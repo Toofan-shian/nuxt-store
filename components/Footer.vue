@@ -1,19 +1,22 @@
 <template>
   <v-footer
-    class="bg-grey-darken-3 site-footer"
-    :elevation="10"
+    class="bg-grey-darken-3 site-footer py-3"
   >
-    <v-row class="d-flex flex-column align-center justify-center" no-gutters>
+    <v-row class="d-flex flex-column align-center justify-center text-grey-lighten-2" no-gutters>
 
-      
       <h3
-      class="w-100 text-center pa-2"
+        class="w-100 text-center text-subtitle-1"
       > Quick Links
       </h3>
 
-      <v-divider color="white"></v-divider>
+      <v-divider
+        color="white" 
+        style="width: 250px"
+        class="mt-1 mb-3"
+      >
+      </v-divider>
     
-      <div class="pa-2">
+      <div class="text-caption">
         <NuxtLink
           v-for="link in links"
           :to="link.path"
@@ -25,22 +28,29 @@
           </span>
         </NuxtLink>
       </div>
-
     </v-row>
   </v-footer>
 </template>
 
+
+
+
 <script setup>
+
 let links = ref([
   {name: 'HOME', path: '/'},
   {name: "PRODUCTS", path: '/products'},
   {name: 'CART ITEMS', path: '/cart'},
 ])
+
 </script>
+
+
+
 
 <style lang="scss" scoped>
 .site-footer {
   min-height: 74px;
-  max-height: 74px;
+  max-height: 90px;
 }
 </style>

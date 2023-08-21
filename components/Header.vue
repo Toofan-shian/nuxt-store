@@ -4,23 +4,27 @@
     elevation="3"
   >
 
-    <v-toolbar-title @click="$router.push('/')">
-      Nuxify Shop
+    <v-toolbar-title
+      @click="$router.push('/')"
+      class="header-title"
+    >
+      <div
+        style="display: inline-block;"
+        v-ripple
+        class="px-2 rounded-lg py-3"
+      >
+        Nuxify Shop
+      </div>
     </v-toolbar-title>
 
     <v-spacer></v-spacer>
 
     <v-btn
-      class="font-weight-bold"
+      class="font-weight-bold rounded-lg"
       color="grey-darken-3"
       text="Products"
       @click="$router.push('/products')"
     ></v-btn>
-
-    <v-btn
-      icon="mdi-weather-sunny"
-    >
-    </v-btn>
 
     <v-btn
       stacked
@@ -41,5 +45,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+.header-title {
+  cursor: pointer;
+}
 </style>

@@ -3,7 +3,7 @@
     <v-row class="">
       <v-sheet
         class=" rounded-xl pt-6 pb-13 px-10"
-        elevation="3"
+        elevation="1"
         width="100%"
       >
         <v-row class="mt-2">
@@ -32,8 +32,7 @@
           <v-col
             cols="4"
           >
-
-            <Checkout></Checkout>
+            <cartCheckout></cartCheckout>
           </v-col>
         </v-row>
       </v-sheet>
@@ -59,6 +58,5 @@ if (store.getCartItems) {
 
 <style scoped>
 .cart-title {
-
 }
 </style>

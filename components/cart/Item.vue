@@ -1,6 +1,6 @@
 <template>
   <v-card
-    class="cartItem mb-6"
+    class="cartItem mb-6 elevation-1"
     hover
   >
     <v-row>
