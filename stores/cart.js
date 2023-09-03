@@ -5,42 +5,40 @@ export const useCartStore = defineStore('cart', {
     products: [],
     cartContent: [
       {
-        id: 1,
-        quantity: 1,
-        title: 'iPhone 9',
-        description: 'An apple mobile which is nothing like apple',
-        price: 549,
-        discountPercentage: 12.96,
-        rating: 4.69,
-        stock: 94,
-        brand: 'Apple',
-        category: 'smartphones',
-        thumbnail: 'https://i.dummyjson.com/data/products/1/thumbnail.jpg',
+        id: 41,
+        title: 'NIGHT SUIT',
+        description: 'NIGHT SUIT RED MICKY MOUSE..  For Girls. Fantastic Suits.',
+        price: 55,
+        discountPercentage: 15.05,
+        rating: 4.65,
+        stock: 21,
+        brand: 'RED MICKY MOUSE..',
+        category: 'womens-dresses',
+        thumbnail: 'https://i.dummyjson.com/data/products/41/thumbnail.webp',
         images: [
-          'https://i.dummyjson.com/data/products/1/1.jpg',
-          'https://i.dummyjson.com/data/products/1/2.jpg',
-          'https://i.dummyjson.com/data/products/1/3.jpg',
-          'https://i.dummyjson.com/data/products/1/4.jpg',
-          'https://i.dummyjson.com/data/products/1/thumbnail.jpg'
+          'https://i.dummyjson.com/data/products/41/1.jpg',
+          'https://i.dummyjson.com/data/products/41/2.webp',
+          'https://i.dummyjson.com/data/products/41/3.jpg',
+          'https://i.dummyjson.com/data/products/41/4.jpg',
+          'https://i.dummyjson.com/data/products/41/thumbnail.webp'
         ]
       },
       {
-        id: 2,
-        title: 'iPhone X',
-        quantity: 2,
-        description: 'SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...',
-        price: 899,
-        discountPercentage: 17.94,
-        rating: 4.44,
-        stock: 34,
-        brand: 'Apple',
-        category: 'smartphones',
-        thumbnail: 'https://i.dummyjson.com/data/products/2/thumbnail.jpg',
+        id: 51,
+        title: 'half sleeves T shirts',
+        description: 'Many store is creating new designs and trend every month and every year. Daraz.pk have a beautiful range of men fashion brands',
+        price: 23,
+        discountPercentage: 12.76,
+        rating: 4.26,
+        stock: 132,
+        brand: 'Vintage Apparel',
+        category: 'mens-shirts',
+        thumbnail: 'https://i.dummyjson.com/data/products/51/thumbnail.jpg',
         images: [
-          'https://i.dummyjson.com/data/products/2/1.jpg',
-          'https://i.dummyjson.com/data/products/2/2.jpg',
-          'https://i.dummyjson.com/data/products/2/3.jpg',
-          'https://i.dummyjson.com/data/products/2/thumbnail.jpg'
+          'https://i.dummyjson.com/data/products/51/1.png',
+          'https://i.dummyjson.com/data/products/51/2.jpg',
+          'https://i.dummyjson.com/data/products/51/3.jpg',
+          'https://i.dummyjson.com/data/products/51/thumbnail.jpg'
         ]
       },
     ],
@@ -57,12 +55,12 @@ export const useCartStore = defineStore('cart', {
     getProductById: (state) => {
       return (id) => state.products.find(p => p.id == id)
     },
-    getHomeDiscounts() {
-      let discProducts = this.products.filter(p => {
-        return p.discountPercentage ? p : false
-      })
-      let homeDiscounts = discProducts.slice(0, 6)
-      return homeDiscounts
+    getProductsByCategory : (state) => {
+      return (category) => {
+        return state.products.filter(p => {
+          return p.category == category ? p : false
+        })
+      }
     }
   },
   actions: {

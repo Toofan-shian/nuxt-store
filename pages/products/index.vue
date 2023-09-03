@@ -4,7 +4,7 @@
       class="px-10 rounded-lg pb-14"
       elevation="1"
     >
-      <productsHeader></productsHeader>
+      <productsHeader :category="category" @category-change="changeCategory"></productsHeader>
       <v-row class="mt-0" no-gutters> 
 
         <!-- products -->
@@ -61,14 +61,44 @@
 
 import {useCartStore} from '@/stores/cart'
 
-let products = ref([])
+let qry = useRoute().query
+let category = ref('All Products')
 
+if (qry.category) {
+  category.value = qry.category
+}
+
+let changeCategory = (data: string) => {
+  category.value = data
+}
+
+
+let products = ref([])
 let cartStore = useCartStore()
-cartStore.fetchProducts()
-  .then(() => {
-  products.value = cartStore.getAllProducts
-  console.log('products injected')
-  })
+
+let fetchProducts = (category: string) => {
+    cartStore.fetchProducts().then(() => {
+      if (category == 'All Products'){
+        products.value = cartStore.getAllProducts
+        console.log('all products injected')
+      }
+      else if (category == 'Womens Dresses') {
+        products.value = cartStore.getProductsByCategory('womens-dresses')
+        console.log('womens dresses injected')
+      }
+      else if(category == 'Mens Shirts') {
+        products.value = cartStore.getProductsByCategory('mens-shirts')
+        console.log('mens shirts injected')
+      }
+      else {
+        console.log('category unknown:',category.value)
+      }
+    })
+}
+
+fetchProducts(category.value)
+
+watch(category, () => fetchProducts(category.value))
 
 </script>
 

@@ -2,7 +2,7 @@
   <div>
     <homeCarousel/>
 
-    <homeProductslide>
+    <homeProductslide :category="'Womens Dresses'">
       <template v-slot:action>
         view all women's products
       </template>
@@ -13,7 +13,7 @@
 
     <homeParallax/>
 
-    <homeProductslide>
+    <homeProductslide category="Mens Shirts">
       <template v-slot:action>
         view all men's products
       </template>

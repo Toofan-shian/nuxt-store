@@ -13,7 +13,7 @@
       <h2
         class="text-center text-h3 text-grey-darken-2 px-1 py-1"
       >
-        All Products
+        {{ category }}
       </h2>
       
       <v-icon
@@ -30,6 +30,7 @@
         <v-list-item
           v-for="(item, index) in categoryItems"
           :key="index"
+          @click="changeCategory(item)"
         >
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
@@ -143,15 +144,26 @@
 </template>
 
 <script setup>
+let props = defineProps(["category"])
+let emits = defineEmits(['categoryChange'])
 
 let grid = ref(true)
 
-let selectCategory = ref('All Products')
+let category = ref(props.category)
+
 let categoryItems = ref([
-  {title: "All Products", value: "ap"},
-  {title: "Womens Dresses", value: 'wd'},
-  {title: "Mens Shirts", value: 'mshirts'},
+  {title: "All Products"},
+  {title: "Womens Dresses"},
+  {title: "Mens Shirts"},
 ])
+
+let changeCategory = (item) => {
+  category.value = item.title
+}
+
+watch(category, () => {
+  emits('categoryChange', category.value)
+})
 
 let searchValue = ref('')
 let sortModel = ref()

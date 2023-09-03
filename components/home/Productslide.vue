@@ -21,7 +21,7 @@
             
           >
             <v-slide-group-item
-              v-for="(p, index) in homeDiscounts"
+              v-for="(p, index) in products"
               :key="index"
             >
               <div class="mx-4">
@@ -39,6 +39,7 @@
             variant="outlined"
             class="mx-auto"
             color="black"
+            @click="goToCategory"
           >
             <slot name="action"></slot>
           </v-btn>
@@ -52,17 +53,24 @@
 <script setup lang="ts">
 import {useCartStore} from '@/stores/cart.js'
 
-let homeDiscounts = ref([])
+let props = defineProps(['category'])
+
+let category = props.category
+let products = ref([])
 
 let cartStore = useCartStore()
+let fetchCategory = category == 'Womens Dresses' ? 'womens-dresses': 'mens-shirts'
+console.log("fetch category is :::", fetchCategory)
 cartStore.fetchProducts()
   .then(() => {
-    homeDiscounts.value = cartStore.getHomeDiscounts
-    console.log('home discounts injected')
+    products.value = cartStore.getProductsByCategory(fetchCategory)
+    console.log(`home ${props.category}  injected`)
   })
   .catch(err => console.log)
 
-
+let goToCategory = function() {
+  useRouter().push(`/products/?category=${category}`)
+}
 </script>
 
 <style scoped>
