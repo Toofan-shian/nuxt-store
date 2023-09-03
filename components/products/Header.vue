@@ -146,7 +146,7 @@
 <script setup>
 
 let props = defineProps(["category"])
-let emits = defineEmits(['categoryChange', 'layoutChange'])
+let emits = defineEmits(['categoryChange', 'layoutChange', 'sortChange'])
 
 let grid = ref(true)
 
@@ -171,14 +171,16 @@ watch(category, () => {
 })
 
 let searchValue = ref('')
+
 let sortModel = ref()
 let sortItems = ref([
   {title: 'Price: Low-Hight', value: 'lh'},
   {title: 'Price: High-Low', value: 'hl'},
-  {title: 'Highest Rating', value: 'hr'},
-  {title: 'Highest Discount', value: 'hd'},
   {title: 'Alphabet: A-Z', value: 'az'},
 ])
+watch(sortModel, () => {
+  emits('sortChange', sortModel.value)
+})
 
 let PriceRange = ref([150, 550])
 

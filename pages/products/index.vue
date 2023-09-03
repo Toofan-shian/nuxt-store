@@ -8,6 +8,7 @@
         :category="category"
         @category-change="changeCategory"
         @layoutChange="changeLayout"
+        @sortChange="changeSorting"
       ></productsHeader>
       <v-row class="mt-0" no-gutters> 
 
@@ -108,6 +109,17 @@ let grid = ref(true)
 
 let changeLayout = () => {
   grid.value = !grid.value
+}
+let changeSorting = (value) => {
+  if (value == 'lh') {
+    products.value.sort((a, b) => a.price - b.price)
+  }
+  else if (value == 'hl') {
+    products.value.sort((a, b) => b.price - a.price)
+  }
+  else if (value == 'az') {
+    products.value.sort((a, b) => a.title.localeCompare(b.title))
+  }
 }
 </script>
 
