@@ -144,10 +144,15 @@
 </template>
 
 <script setup>
+
 let props = defineProps(["category"])
-let emits = defineEmits(['categoryChange'])
+let emits = defineEmits(['categoryChange', 'layoutChange'])
 
 let grid = ref(true)
+
+watch(grid, () => {
+  emits('layoutChange')
+})
 
 let category = ref(props.category)
 

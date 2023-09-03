@@ -4,7 +4,11 @@
       class="px-10 rounded-lg pb-14"
       elevation="1"
     >
-      <productsHeader :category="category" @category-change="changeCategory"></productsHeader>
+      <productsHeader
+        :category="category"
+        @category-change="changeCategory"
+        @layoutChange="changeLayout"
+      ></productsHeader>
       <v-row class="mt-0" no-gutters> 
 
         <!-- products -->
@@ -100,6 +104,11 @@ fetchProducts(category.value)
 
 watch(category, () => fetchProducts(category.value))
 
+let grid = ref(true)
+
+let changeLayout = () => {
+  grid.value = !grid.value
+}
 </script>
 
 <style scoped>
