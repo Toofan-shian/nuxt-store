@@ -105,33 +105,8 @@ let fetchProducts = async (category: string) => {
   }
 }
 
-// let fetchProducts = (category: string) => {
-//   return new Promise((res, rej) => {
-    
-//     let tempProducts = []
-//     cartStore.fetchProducts().then(() => {
-//       if (category == 'All Products'){
-//         tempProducts = cartStore.getAllProducts
-//         console.log('all products injected')
-//       }
-//       else if (category == 'Womens Dresses') {
-//         tempProducts = cartStore.getProductsByCategory('womens-dresses')
-//         console.log('womens dresses injected')
-//       }
-//       else if(category == 'Mens Shirts') {
-//         tempProducts = cartStore.getProductsByCategory('mens-shirts')
-//         console.log('mens shirts injected')
-//       }
-//       else {
-//         console.log('category unknown:',category.value)
-//       }
-//     })
-//     console.log('resolving', tempProducts)
-//     res(tempProducts)
-//   })
-// }
 
-fetchProducts(category.value)
+await fetchProducts(category.value)
 
 
 let priceRange = cartStore.getPriceRange
@@ -174,14 +149,6 @@ let setNewPrice = async (newRange) => {
   filterByPrice(newRange)
 }
 
-// let changePriceRange = (newRange) => {
-//   fetchProducts(category).then((res) => {
-//     let filteredProducts = res.json().filter(p => {
-//       return p.price >= newRange[0] && p.price <= newRange[1]
-//     })
-//     products.value = filteredProducts
-//   })
-// }
 
 </script>
 

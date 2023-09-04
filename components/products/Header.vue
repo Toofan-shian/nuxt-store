@@ -137,6 +137,7 @@
         class="search-field"
         clearable
         :model-value="searchValue"
+        @input="inputEntered"
         rounded
       ></v-text-field>
     </v-col>
@@ -144,11 +145,11 @@
 </template>
 
 <script setup>
-import {useCartStore} from '@/stores/cart'
+// import {useCartStore} from '@/stores/cart.js'
 
-let cartStore = useCartStore()
+// let cartStore = useCartStore()
 let props = defineProps(["category", 'priceRange'])
-let emits = defineEmits(['categoryChange', 'layoutChange', 'sortChange', "priceRangeChange"])
+let emits = defineEmits(['categoryChange', 'layoutChange', 'sortChange', "priceRangeChange", 'searchTermChange'])
 
 let grid = ref(true)
 
@@ -172,8 +173,6 @@ watch(category, () => {
   emits('categoryChange', category.value)
 })
 
-let searchValue = ref('')
-
 let sortModel = ref()
 let sortItems = ref([
   {title: 'Price: Low-Hight', value: 'lh'},
@@ -186,19 +185,17 @@ watch(sortModel, () => {
 
 let priceRange = ref(props.priceRange)
 let priceMinMax = ref(priceRange.value)
-// cartStore.fetchProducts().then(() => {
-//   let range = cartStore.getPriceRange
-//   console.log("here", priceRange.value)
-//   priceRange.value = cartStore.getPriceRange
-// })
-// let changePriceRange = function() {
-//   console.log(priceRange.value)
-// }
-// changePriceRange()
+
 
 watch(priceRange, () => {
   emits('priceRangeChange', priceRange.value)
 })
+
+let searchValue = ref('')
+
+// let inputEntered = (data) => {
+//   console.log(data)
+// }
 
 </script>
 

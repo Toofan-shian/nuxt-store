@@ -1,3 +1,4 @@
+// import { error } from 'console'
 import {defineStore} from 'pinia'
 
 export const useCartStore = defineStore('cart', {
@@ -91,14 +92,14 @@ export const useCartStore = defineStore('cart', {
       return range
     },
 
-    getProductsByPriceRange: (state) => {
-      return (range) => {
-        let newProducts = state.products.filter(p => {
-          return p.price >= range[0] && p.price <= range[1]
-        })
-        return newProducts
-      }
-    }
+    // getProductsByPriceRange: (state) => {
+    //   return (range) => {
+    //     let newProducts = state.products.filter(p => {
+    //       return p.price >= range[0] && p.price <= range[1]
+    //     })
+    //     return newProducts
+    //   }
+    // }
   },
 
   actions: {
@@ -110,13 +111,16 @@ export const useCartStore = defineStore('cart', {
         console.log('fetching all products (store)...')
         
         let {data} = await useFetch('/api/products')
+        if (!data.value) {
+          console.log('couldnt get data from server (store)')
+        }
         this.products = data.value
+        console.log('all products fetched (store)')
+        return
 
       } catch (error) {
-        console.log('fetching all products failed (store)')
-        throw(error)
+        throw error
       }
-      console.log('all products fetched (store)')
 
     },
 

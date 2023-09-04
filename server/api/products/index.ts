@@ -5,17 +5,25 @@ export default defineEventHandler(async event => {
   // console.log('fetching all products (server)...')
   // let allProducts = await $fetch("https://dummyjson.com/products")
 
-  console.log('fetching womens products')
-  let womensRes = await $fetch("https://dummyjson.com/products/category/womens-dresses")
-
-  console.log('fetching mens products')
-  let mensRes = await $fetch("https://dummyjson.com/products/category/mens-shirts")
-
-  for(let i = 0; i < 5; i++) {
-    products.push(womensRes.products[i])
-    products.push(mensRes.products[i])
+  try {
+    console.log('fetching womens products')
+    let womensRes = await $fetch("https://dummyjson.com/products/category/womens-dresses")
+    
+    console.log('fetching mens products')
+    let mensRes = await $fetch("https://dummyjson.com/products/category/mens-shirts")
+    
+    for(let i = 0; i < 5; i++) {
+      products.push(womensRes.products[i])
+      products.push(mensRes.products[i])
+    }
+    console.log('all products fetched (server)')
+    return products
+  
+  } catch (error) {
+    console.log('faild to connect to api')
+    throw(error)
   }
-  console.log('all products fetched (server)')
 
-  return products
+
+
 })
