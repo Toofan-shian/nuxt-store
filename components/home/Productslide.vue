@@ -60,7 +60,7 @@ let products = ref([])
 
 let cartStore = useCartStore()
 let fetchCategory = category == 'Womens Dresses' ? 'womens-dresses': 'mens-shirts'
-console.log("fetch category is :::", fetchCategory)
+
 cartStore.fetchProducts()
   .then(() => {
     products.value = cartStore.getProductsByCategory(fetchCategory)

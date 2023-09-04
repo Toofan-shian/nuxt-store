@@ -44,25 +44,63 @@ export const useCartStore = defineStore('cart', {
     ],
     theme: 'light',
   }),
+
   getters: {
     getAllProducts() {
       return this.products
     },
+
     getCartItems() {
       console.log('getting cart items')
       return this.cartContent
     },
+
     getProductById: (state) => {
       return (id) => state.products.find(p => p.id == id)
     },
-    getProductsByCategory : (state) => {
+
+    getProductsByCategory: (state) => {
       return (category) => {
-        return state.products.filter(p => {
+        let filteredProducts =  state.products.filter(p => {
           return p.category == category ? p : false
         })
+        return filteredProducts
+      }
+    },
+
+    getPriceRange(state) {
+      let range = () => {
+        let min = null
+        let max = null
+        state.products.forEach(p => {
+          if (!min) {
+            min = p.price
+          } else if (p.price <= min) {
+            min = p.price
+          }
+          if (!max) {
+            max = p.price
+          } else if (p.price >= max) {
+            max = p.price
+          }
+        })
+        return [min, max]
+      }
+      range = range()
+      console.log("range (state)------ ", range)
+      return range
+    },
+
+    getProductsByPriceRange: (state) => {
+      return (range) => {
+        let newProducts = state.products.filter(p => {
+          return p.price >= range[0] && p.price <= range[1]
+        })
+        return newProducts
       }
     }
   },
+
   actions: {
     async fetchProducts() {
       if (this.products.length > 0) {
@@ -74,15 +112,16 @@ export const useCartStore = defineStore('cart', {
         let {data} = await useFetch('/api/products')
         this.products = data.value
 
-        console.log('all products fetched (store)')
       } catch (error) {
+        console.log('fetching all products failed (store)')
         throw(error)
       }
+      console.log('all products fetched (store)')
 
     },
+
     add(productId) {
       let productInCart = this.cartContent.find(product => product.id == productId) 
-      console.log('productInCart:', productInCart)
 
       if (!productInCart) {
         let product = this.products.find(product => product.id == productId)

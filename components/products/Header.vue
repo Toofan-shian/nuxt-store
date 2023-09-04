@@ -94,7 +94,7 @@
           <div
             class="price-filter-content-range text-end text-caption font-weight-thin text-grey-darken-2"
           >
-            ${{ PriceRange[0] }}-{{PriceRange[1]}}
+            ${{ priceRange[0] }}-{{priceRange[1]}}
           </div>
 
           <v-icon
@@ -116,10 +116,10 @@
         >
           <v-range-slider
             color="info-darken-2"
-            v-model="PriceRange"
+            v-model="priceRange"
             strict
-            :min="150"
-            :max="1800"
+            :min="priceMinMax[0]"
+            :max="priceMinMax[1]"
             hide-details
             thumb-size="12"
             track-size="2"
@@ -144,9 +144,11 @@
 </template>
 
 <script setup>
+import {useCartStore} from '@/stores/cart'
 
-let props = defineProps(["category"])
-let emits = defineEmits(['categoryChange', 'layoutChange', 'sortChange'])
+let cartStore = useCartStore()
+let props = defineProps(["category", 'priceRange'])
+let emits = defineEmits(['categoryChange', 'layoutChange', 'sortChange', "priceRangeChange"])
 
 let grid = ref(true)
 
@@ -182,7 +184,21 @@ watch(sortModel, () => {
   emits('sortChange', sortModel.value)
 })
 
-let PriceRange = ref([150, 550])
+let priceRange = ref(props.priceRange)
+let priceMinMax = ref(priceRange.value)
+// cartStore.fetchProducts().then(() => {
+//   let range = cartStore.getPriceRange
+//   console.log("here", priceRange.value)
+//   priceRange.value = cartStore.getPriceRange
+// })
+// let changePriceRange = function() {
+//   console.log(priceRange.value)
+// }
+// changePriceRange()
+
+watch(priceRange, () => {
+  emits('priceRangeChange', priceRange.value)
+})
 
 </script>
 

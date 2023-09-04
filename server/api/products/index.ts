@@ -1,10 +1,9 @@
 import { useFetch } from "nuxt/app"
 
 export default defineEventHandler(async event => {
-
-  console.log('fetching all products (server)...')
-
   let products = []
+  // console.log('fetching all products (server)...')
+  // let allProducts = await $fetch("https://dummyjson.com/products")
 
   console.log('fetching womens products')
   let womensRes = await $fetch("https://dummyjson.com/products/category/womens-dresses")

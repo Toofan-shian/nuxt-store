@@ -6,10 +6,13 @@
     >
       <productsHeader
         :category="category"
+        :priceRange="priceRangeRef"
         @category-change="changeCategory"
         @layoutChange="changeLayout"
         @sortChange="changeSorting"
+        @priceRangeChange="setNewPrice"
       ></productsHeader>
+
       <v-row class="mt-0" no-gutters> 
 
         <!-- products -->
@@ -81,29 +84,64 @@ let changeCategory = (data: string) => {
 let products = ref([])
 let cartStore = useCartStore()
 
-let fetchProducts = (category: string) => {
-    cartStore.fetchProducts().then(() => {
-      if (category == 'All Products'){
-        products.value = cartStore.getAllProducts
-        console.log('all products injected')
-      }
-      else if (category == 'Womens Dresses') {
-        products.value = cartStore.getProductsByCategory('womens-dresses')
-        console.log('womens dresses injected')
-      }
-      else if(category == 'Mens Shirts') {
-        products.value = cartStore.getProductsByCategory('mens-shirts')
-        console.log('mens shirts injected')
-      }
-      else {
-        console.log('category unknown:',category.value)
-      }
-    })
+
+let fetchProducts = async (category: string) => {
+  await cartStore.fetchProducts()
+
+  if (category == 'All Products'){
+    products.value = cartStore.getAllProducts
+    console.log('all products injected')
+  }
+  else if (category == 'Womens Dresses') {
+    products.value = cartStore.getProductsByCategory('womens-dresses')
+    console.log('womens dresses injected')
+  }
+  else if(category == 'Mens Shirts') {
+    products.value = cartStore.getProductsByCategory('mens-shirts')
+    console.log('mens shirts injected')
+  }
+  else {
+    console.log('category unknown:',category.value)
+  }
 }
+
+// let fetchProducts = (category: string) => {
+//   return new Promise((res, rej) => {
+    
+//     let tempProducts = []
+//     cartStore.fetchProducts().then(() => {
+//       if (category == 'All Products'){
+//         tempProducts = cartStore.getAllProducts
+//         console.log('all products injected')
+//       }
+//       else if (category == 'Womens Dresses') {
+//         tempProducts = cartStore.getProductsByCategory('womens-dresses')
+//         console.log('womens dresses injected')
+//       }
+//       else if(category == 'Mens Shirts') {
+//         tempProducts = cartStore.getProductsByCategory('mens-shirts')
+//         console.log('mens shirts injected')
+//       }
+//       else {
+//         console.log('category unknown:',category.value)
+//       }
+//     })
+//     console.log('resolving', tempProducts)
+//     res(tempProducts)
+//   })
+// }
 
 fetchProducts(category.value)
 
-watch(category, () => fetchProducts(category.value))
+
+let priceRange = cartStore.getPriceRange
+let priceRangeRef = ref(priceRange)
+
+
+watch(category, async () => {
+  await fetchProducts(category.value);
+  filterByPrice(priceRangeRef.value)
+})
 
 let grid = ref(true)
 
@@ -121,6 +159,30 @@ let changeSorting = (value) => {
     products.value.sort((a, b) => a.title.localeCompare(b.title))
   }
 }
+
+let filterByPrice = (newRange) => {
+  priceRangeRef.value = newRange
+  let newProducts = products.value.filter(product => {
+    let pass = (product.price >= newRange[0]) && (product.price <= newRange[1])
+    return pass
+  })
+  products.value = [...newProducts]
+}
+
+let setNewPrice = async (newRange) => {
+  await fetchProducts(category.value)
+  filterByPrice(newRange)
+}
+
+// let changePriceRange = (newRange) => {
+//   fetchProducts(category).then((res) => {
+//     let filteredProducts = res.json().filter(p => {
+//       return p.price >= newRange[0] && p.price <= newRange[1]
+//     })
+//     products.value = filteredProducts
+//   })
+// }
+
 </script>
 
 <style scoped>
