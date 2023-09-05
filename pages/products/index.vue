@@ -1,5 +1,5 @@
 <template>
-  <v-container class="mt-10">
+  <v-container class="mt-10 mb-10">
     <v-sheet
       class="px-10 rounded-lg pb-14"
       elevation="1"
@@ -9,7 +9,7 @@
         :priceRange="priceRangeRef"
         @category-change="changeCategory"
         @layoutChange="changeLayout"
-        @sortChange="changeSorting"
+        @sortChange="setSortingProducts"
         @priceRangeChange="setNewPrice"
         @searchTermChange="setNewSearchTerm"
       ></productsHeader>
@@ -117,7 +117,8 @@ let priceRangeRef = ref(priceRange)
 watch(category, async () => {
   await fetchProducts(category.value);
   filterByPrice(priceRangeRef.value)
-  if (searchValue.value) filterBySearchTerm(searchValue.value) 
+  if (searchValue.value) filterBySearchTerm(searchValue.value)
+  if (sortValue.value) changeSorting(sortValue.value)
 })
 
 let grid = ref(true)
@@ -125,6 +126,9 @@ let grid = ref(true)
 let changeLayout = () => {
   grid.value = !grid.value
 }
+
+let sortValue = ref()
+
 let changeSorting = (value) => {
   if (value == 'lh') {
     products.value.sort((a, b) => a.price - b.price)
@@ -135,6 +139,14 @@ let changeSorting = (value) => {
   else if (value == 'az') {
     products.value.sort((a, b) => a.title.localeCompare(b.title))
   }
+}
+
+let setSortingProducts = async (value) => {
+  sortValue.value = value
+  await fetchProducts(category.value)
+  filterByPrice(priceRangeRef.value)
+  if (searchValue.value) filterBySearchTerm(searchValue.value)
+  changeSorting(value)
 }
 
 let filterByPrice = (newRange) => {
@@ -149,7 +161,8 @@ let setNewPrice = async (newRange) => {
   priceRangeRef.value = newRange
   await fetchProducts(category.value)
   filterByPrice(newRange)
-  if (searchValue.value) filterBySearchTerm(searchValue.value) 
+  if (searchValue.value) filterBySearchTerm(searchValue.value)
+  if (sortValue.value) changeSorting(sortValue.value)
 }
 
 let searchValue = ref()
@@ -167,7 +180,8 @@ let setNewSearchTerm = async (term: string) => {
   searchValue.value = term
   await fetchProducts(category.value)
   filterByPrice(priceRangeRef.value)
-  filterBySearchTerm(term)
+  if (searchValue.value) filterBySearchTerm(searchValue.value)
+  if (sortValue.value) changeSorting(sortValue.value)
 }
 
 </script>

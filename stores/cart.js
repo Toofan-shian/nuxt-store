@@ -1,4 +1,3 @@
-// import { error } from 'console'
 import {defineStore} from 'pinia'
 
 export const useCartStore = defineStore('cart', {
