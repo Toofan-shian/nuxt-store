@@ -112,7 +112,7 @@ export const useCartStore = defineStore('cart', {
         
         let {data} = await useFetch('/api/products')
         if (!data.value) {
-          console.log('couldnt get data from server (store)')
+          throw error
         }
         this.products = data.value
         console.log('all products fetched (store)')

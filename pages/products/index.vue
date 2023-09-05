@@ -11,6 +11,7 @@
         @layoutChange="changeLayout"
         @sortChange="changeSorting"
         @priceRangeChange="setNewPrice"
+        @searchTermChange="setNewSearchTerm"
       ></productsHeader>
 
       <v-row class="mt-0" no-gutters> 
@@ -116,6 +117,7 @@ let priceRangeRef = ref(priceRange)
 watch(category, async () => {
   await fetchProducts(category.value);
   filterByPrice(priceRangeRef.value)
+  if (searchValue.value) filterBySearchTerm(searchValue.value) 
 })
 
 let grid = ref(true)
@@ -136,7 +138,6 @@ let changeSorting = (value) => {
 }
 
 let filterByPrice = (newRange) => {
-  priceRangeRef.value = newRange
   let newProducts = products.value.filter(product => {
     let pass = (product.price >= newRange[0]) && (product.price <= newRange[1])
     return pass
@@ -145,12 +146,32 @@ let filterByPrice = (newRange) => {
 }
 
 let setNewPrice = async (newRange) => {
+  priceRangeRef.value = newRange
   await fetchProducts(category.value)
   filterByPrice(newRange)
+  if (searchValue.value) filterBySearchTerm(searchValue.value) 
 }
 
+let searchValue = ref()
+
+let filterBySearchTerm = (term: string) => {
+  let searchRegEx = new RegExp(term, 'i')
+  let newProducts = products.value.filter(product => {
+    return searchRegEx.test(product.title)
+  })
+  products.value = [...newProducts]
+}
+
+let setNewSearchTerm = async (term: string) => {
+  console.log('setting serach term')
+  searchValue.value = term
+  await fetchProducts(category.value)
+  filterByPrice(priceRangeRef.value)
+  filterBySearchTerm(term)
+}
 
 </script>
+
 
 <style scoped>
 

@@ -136,7 +136,7 @@
         placeholder="Search Here..."
         class="search-field"
         clearable
-        :model-value="searchValue"
+        v-model="searchValue"
         @input="inputEntered"
         rounded
       ></v-text-field>
@@ -193,9 +193,9 @@ watch(priceRange, () => {
 
 let searchValue = ref('')
 
-// let inputEntered = (data) => {
-//   console.log(data)
-// }
+let inputEntered = () => {
+  emits('searchTermChange', searchValue.value)
+}
 
 </script>
 
