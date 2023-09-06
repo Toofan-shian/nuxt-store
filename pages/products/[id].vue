@@ -17,7 +17,9 @@
             cols="7"
             class=""
           >
-            <productsDetailsCarousel :images="product.images" />
+            <productsDetailsCarousel
+              :images="product.images"
+            />
           </v-col>
     
           <v-col
@@ -44,6 +46,7 @@
             <v-btn
               class="mt-8 rounded-lg"
               color="success"
+              @click="() => addToCart(id)"
             >Add to cart</v-btn>
 
             <v-expansion-panels
@@ -78,6 +81,10 @@ let expansionPanels = [
 
 let store = useCartStore()
 let product = store.getProductById(id)
+
+let addToCart = (id) => {
+  store.add(id)
+}
 
 
 

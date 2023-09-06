@@ -90,15 +90,6 @@ export const useCartStore = defineStore('cart', {
       console.log("range (state)------ ", range)
       return range
     },
-
-    // getProductsByPriceRange: (state) => {
-    //   return (range) => {
-    //     let newProducts = state.products.filter(p => {
-    //       return p.price >= range[0] && p.price <= range[1]
-    //     })
-    //     return newProducts
-    //   }
-    // }
   },
 
   actions: {
@@ -130,12 +121,19 @@ export const useCartStore = defineStore('cart', {
         let product = this.products.find(product => product.id == productId)
         product.quantity = 1
         this.cartContent.push(product)
+        console.log('product added to cart')
         console.log(this.cartContent)
       }
       else {
         productInCart.quantity += 1
+        console.log('product quantity increased')
       }
-      console.log('product added to cart')
+      
+    },
+
+    remove(productId) {
+      let index = this.cartContent.indexOf(product => product.id == productId)
+
     }
   }
 })

@@ -11,19 +11,24 @@
         :key="index"
         class=""
       >
-        <v-img :src="img" class="w-100 h-100 py-2"
+        <v-img
+          :src="img"
+          class="w-100 h-100 py-2"
         ></v-img>
       </v-carousel-item>
     </v-carousel>
   
     <div
-      class="d-flex justify-center  mb-9 w-100"
+      class="d-flex justify-center mt-3  mb-9 w-100"
     >
       <v-card
         variant="tonal"
         v-for="(img, index) in images"
         :key="index"
-        class="mx-2"
+        class="mx-2 elevation-1"
+        @click="carouselModel = index"
+        hover
+        
       >
         <v-img :src="img" class="" width="50" height="50"></v-img>
       </v-card>
@@ -32,8 +37,11 @@
 </template>
 
 <script setup lang="ts">
+
 defineProps(['images'])
-let carouselModel = ref(2)
+let carouselModel = ref()
+
+
 </script>
 
 <style scoped>
