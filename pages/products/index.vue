@@ -106,8 +106,8 @@ let fetchProducts = async (category: string) => {
   }
 }
 
-
 await fetchProducts(category.value)
+
 
 
 let priceRange = cartStore.getPriceRange

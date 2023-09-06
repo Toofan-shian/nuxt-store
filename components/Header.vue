@@ -26,13 +26,14 @@
       @click="$router.push('/products')"
     ></v-btn>
 
+    <!-- CART -->
     <v-btn
       stacked
       icon="mdi-cart-outline"
       class="icon"
       @click="$router.push('/cart')"
     >
-      <v-badge :content="23" color="error" class="ma-0 pa-0">
+      <v-badge :content="cartItemsCount" color="error" class="ma-0 pa-0">
         <v-icon class="pa-0">mdi-cart-outline</v-icon>
       </v-badge>
     </v-btn>
@@ -41,6 +42,13 @@
 </template>
 
 <script setup>
+import { useCartStore } from '@/stores/cart';
+
+let cartStore = useCartStore()
+
+const cartItemsCount = computed(() => {
+  return cartStore.getCartInfo.count;
+});
 
 </script>
 
