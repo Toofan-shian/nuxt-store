@@ -72,7 +72,6 @@ const props = defineProps(['product'])
 const cartStore = useCartStore()
 
 let removeProduct = () => {
-  console.log('removing id :', props.product.id)
   cartStore.remove(props.product.id)
 }
 </script>

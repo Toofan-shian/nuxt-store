@@ -6,6 +6,8 @@
         elevation="1"
         width="100%"
       >
+
+        <!-- TITLE -->
         <v-row class="mt-2">
           <div
             class="mb-7 mx-auto"
@@ -20,15 +22,40 @@
           class="mx-9 border-opacity-25 mb-10"
           color="grey-lighten-2"
         ></v-divider>
-
+        
+        <!-- CONTENT -->
         <v-row>
+
+          <!-- PRODUCTS -->
           <v-col
+            v-if="products.length == 0"
+            cols="8"
+            class="d-flex flex-column justify-start align-center"
+          >
+            <h3
+              class="text-h5 mt-1"
+            >
+              There is no products in your cart
+            </h3>
+            <v-btn
+              class="mt-4"
+              color="green"
+              variant="outlined"
+              @click="$router.push('/products')"
+            >
+              explore products
+            </v-btn>
+          </v-col>
+
+          <v-col
+            v-else
             cols="8"
             class=""
           >
             <cartItem v-for="(product, index) in products" :key="index" :product="product"></cartItem>
           </v-col>
-    
+          
+          <!-- CHECKOUT -->
           <v-col
             cols="4"
           >
@@ -43,6 +70,7 @@
 
 <script setup lang="ts">
 import {useCartStore} from '../stores/cart'
+
 
 let store = useCartStore()
 let products = ref([])
