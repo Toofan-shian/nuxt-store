@@ -12,10 +12,10 @@
         <v-row class=" justify-space-between px-1 py-1" no-gutters>
           <span>
             Items
-            <span class="text-caption">({{ count }})</span>
+            <span class="text-caption">({{ itemsCount }})</span>
           </span>
           <span>
-            ${{ total }}
+            ${{ totalPrice }}
           </span>
         </v-row>
         
@@ -33,7 +33,7 @@
             Discounts
           </span>
           <span>
-            {{discounts}}
+            $0
           </span>
         </v-row>
   
@@ -44,7 +44,7 @@
             Subtotal
           </span>
           <span>
-            ${{total}}
+            ${{totalPrice}}
           </span>
         </v-row>
       </v-container>
@@ -60,9 +60,18 @@
 </template>
 
 <script setup lang="ts">
-let count = ref(23)
-let total = ref(234)
-let discounts = ref('2$')
+import { useCartStore } from '@/stores/cart'
+import { ref, watch } from 'vue'
+
+let cartStore = useCartStore()
+
+let itemsCount = ref(cartStore.getCartInfo.count)
+let totalPrice = ref(cartStore.getCartInfo.subTotal)
+
+watch(() => cartStore.getCartInfo, (newCartInfo) => {
+  itemsCount.value = newCartInfo.count
+  totalPrice.value = newCartInfo.subTotal
+})
 </script>
 
 <style scoped>

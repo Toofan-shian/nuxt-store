@@ -92,6 +92,18 @@ export const useCartStore = defineStore('cart', {
       console.log("range (state)------ ", range)
       return range
     },
+
+    getCartInfo() {
+      let count = 0;
+      let subTotal = 0;
+
+      this.cartContent.forEach(p => {
+        count += p.quantity;
+        subTotal += p.price * p.quantity;
+      })
+
+      return {count, subTotal}
+    }
   },
 
   actions: {

@@ -72,16 +72,15 @@
 import {useCartStore} from '../stores/cart'
 
 
-let store = useCartStore()
+let cartStore = useCartStore()
 let products = ref([])
-let totalPrice = ref(0)
-let itemsCount = ref(0)
 
 
-if (store.getCartItems) {
-  products.value = store.getCartItems
+if (cartStore.getCartItems) {
+  products.value = cartStore.getCartItems
 }
-// watch(store.cartContent, () => products.value = store.cartContent) 
+
+
 
 </script>
 
