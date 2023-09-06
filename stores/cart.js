@@ -132,8 +132,11 @@ export const useCartStore = defineStore('cart', {
     },
 
     remove(productId) {
-      let index = this.cartContent.indexOf(product => product.id == productId)
-
+      let index = this.cartContent.findIndex(product => product.id == productId)
+      console.log('remove index', index)
+      this.cartContent[index].quantity = 0;
+      this.cartContent.splice(index, 1)
+      console.log('product removed from cart')
     }
   }
 })
