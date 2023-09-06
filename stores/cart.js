@@ -6,6 +6,7 @@ export const useCartStore = defineStore('cart', {
     cartContent: [
       {
         id: 41,
+        quantity: 1,
         title: 'NIGHT SUIT',
         description: 'NIGHT SUIT RED MICKY MOUSE..  For Girls. Fantastic Suits.',
         price: 55,
@@ -25,6 +26,7 @@ export const useCartStore = defineStore('cart', {
       },
       {
         id: 51,
+        quantity: 4,
         title: 'half sleeves T shirts',
         description: 'Many store is creating new designs and trend every month and every year. Daraz.pk have a beautiful range of men fashion brands',
         price: 23,
@@ -136,6 +138,17 @@ export const useCartStore = defineStore('cart', {
       this.cartContent[index].quantity = 0;
       this.cartContent.splice(index, 1)
       console.log('product removed from cart')
+    },
+
+    changeQty(productId, number) {
+      let index = this.cartContent.findIndex(product => product.id == productId)
+      this.cartContent[index].quantity += number;
+      
+      if (this.cartContent[index].quantity == 0) {
+        this.remove(productId)
+      }
+      
+
     }
   }
 })

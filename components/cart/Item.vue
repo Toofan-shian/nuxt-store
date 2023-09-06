@@ -29,36 +29,42 @@
         <v-card-subtitle class="pa-0 mt-n5">${{ product.price }}</v-card-subtitle>
 
         <v-card-actions class="pa-0 mr-3 mb-n1">
-           <span class="text-subtitle-2 mr-2">Qty:</span>
-           <v-btn
-              class="ma-0 "
-              style="min-width:1px;"
-              density="compact"
-              variant="outlined"
-            >
+
+          <span class="text-subtitle-2 mr-2">Qty:</span>
+
+          <v-btn
+            class="ma-0 "
+            style="min-width:1px;"
+            density="compact"
+            variant="outlined"
+            @click="() => changeQty(1)"
+          >
             <v-icon class="pa-0 ma-0">mdi-plus</v-icon>
-           </v-btn>
-           <span class="pa-0 mx-3">{{ product.quantity }}</span>
-           <v-btn
-              class="ma-0 "
-              style="min-width:1px;"
-              density="compact"
-              variant="outlined"
-            >
+          </v-btn>
+
+          <span class="pa-0 mx-3">{{ product.quantity }}</span>
+
+          <v-btn
+            class="ma-0 "
+            style="min-width:1px;"
+            density="compact"
+            variant="outlined"
+            @click="() => changeQty(-1)"
+          >
             <v-icon>mdi-minus</v-icon>
-           </v-btn>
+          </v-btn>
 
-           <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
 
-           <v-btn
-            class="ma-0"
-            size="small"
-            variant="plain"
-            color="red-lighten-2"
-            @click="removeProduct"
-            >
-              remove
-            </v-btn>
+          <v-btn
+          class="ma-0"
+          size="small"
+          variant="plain"
+          color="red-lighten-2"
+          @click="removeProduct"
+          >
+            remove
+          </v-btn>
         </v-card-actions>
       </v-col>
     </v-row>
@@ -74,6 +80,12 @@ const cartStore = useCartStore()
 let removeProduct = () => {
   cartStore.remove(props.product.id)
 }
+
+let changeQty = (number) => {
+ cartStore.changeQty(props.product.id, number)
+}
+
+
 </script>
 
 <style scoped>
