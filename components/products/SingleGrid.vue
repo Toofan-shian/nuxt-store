@@ -36,7 +36,7 @@
       class="px-3"
     >
       <v-btn
-        @click="addToCart"
+        @click.prevent="addToCart"
         color="green-darken-2"
         variant="outlined"
         class="w-100"
@@ -48,9 +48,14 @@
 </template>
 
 <script setup lang="ts">
-defineProps(['product'])
+import {useCartStore} from '@/stores/cart'
+let props = defineProps(['product'])
 
-let addToCart = () => console.log('add product')
+let cartStore = useCartStore()
+
+let addToCart = () => {
+  cartStore.add(props.product.id)
+}
 </script>
 
 <style scoped>

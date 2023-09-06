@@ -56,7 +56,7 @@
           class="d-flex justify-end mb-2 mx-7"
         >
           <v-btn
-            @click.prevent="cartStore.add(product.id)"
+            @click.prevent="addToCart"
             class="w-100"
             variant="outlined"
             color="green-darken-2"
@@ -71,10 +71,13 @@
 </template>
 
 <script setup>
+import {useCartStore} from '@/stores/cart'
+let props = defineProps(['product'])
 
+let cartStore = useCartStore()
 
-defineProps(['product'])
-let addToCart = () => console.log('add to cart')
+let addToCart = () => cartStore.add(props.product.id) 
+
 let router = useRouter()
 
 let goToDetails = () => {

@@ -53,7 +53,7 @@ let itemsCount = ref(0)
 if (store.getCartItems) {
   products.value = store.getCartItems
 }
-watch(store.cartContent, () => products.value = store.cartContent) 
+// watch(store.cartContent, () => products.value = store.cartContent) 
 
 </script>
 
