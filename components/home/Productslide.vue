@@ -5,14 +5,13 @@
     <v-row class="">
       <v-col cols="12">
         <!-- TITLE -->
-        <h1 class="text-center text-h3 font-waight-black py-9 text-capitalize">
+        <h1 class="text-center text-h4 text-sm-h3 text-lg-h2 py-9 mb-lg-2">
           <slot name="title"></slot>
         </h1>
   
         <!-- PRODUCTS SLIDER-->
         <v-sheet
-          elevation="1"
-          class="py-9 rounded-lg"
+          class="py-9 rounded-lg border"
         >
           <v-slide-group
             class="slider"
@@ -52,6 +51,9 @@
 
 <script setup lang="ts">
 import {useCartStore} from '@/stores/cart.js'
+// import {useDisplay} from 'vuetify'
+
+// let display = useDisplay()
 
 let props = defineProps(['category'])
 

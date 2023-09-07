@@ -7,7 +7,7 @@
         view all women's products
       </template>
       <template v-slot:title>
-        women's clothing
+        Women's Clothing
       </template>
     </homeProductslide>
 
@@ -18,7 +18,7 @@
         view all men's products
       </template>
       <template v-slot:title>
-        men's shirts
+        Men's Shirts
       </template>
     </homeProductslide>
 
