@@ -11,6 +11,7 @@
         elevation="3"
         variant="outlined"
         color="white"
+        @click="$router.push('/products')"
       >
         check all products
       </v-btn>

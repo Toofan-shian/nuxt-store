@@ -1,42 +1,46 @@
 <template>
   <v-app-bar
-    class="pa-2"
+    class=""
     elevation="3"
+    height="70"
   >
 
-    <v-toolbar-title
+
+    <div
+      class="header-title text-h6  h-100 px-4 d-flex align-center ml-6 v-ripple"
       @click="$router.push('/')"
-      class="header-title"
+      v-ripple
     >
-      <div
-        style="display: inline-block;"
-        v-ripple
-        class="px-2 rounded-lg py-3"
-      >
-        Nuxify Shop
-      </div>
-    </v-toolbar-title>
+      Nuxify Shop
+    </div>
 
     <v-spacer></v-spacer>
 
-    <v-btn
-      class="font-weight-bold rounded-lg"
-      color="grey-darken-3"
-      text="Products"
-      @click="$router.push('/products')"
-    ></v-btn>
-
-    <!-- CART -->
-    <v-btn
-      stacked
-      icon="mdi-cart-outline"
-      class="icon"
-      @click="$router.push('/cart')"
+    <v-toolbar-items
+      class=""
     >
-      <v-badge :content="cartItemsCount" color="error" class="ma-0 pa-0">
-        <v-icon class="pa-0">mdi-cart-outline</v-icon>
-      </v-badge>
-    </v-btn>
+      <v-btn
+        class="font-weight-bold rounded-lg"
+        color="grey-darken-3"
+        text="Products"
+        @click="$router.push('/products')"
+      ></v-btn>
+  
+      <!-- CART -->
+      <v-btn
+        stacked
+        icon="mdi-cart-outline"
+        class="icon"
+        @click="$router.push('/cart')"
+      > 
+        <v-badge v-if="cartItemsCount != 0" :content="cartItemsCount" color="error" class="ma-0 pa-0">
+          <v-icon class="pa-0">mdi-cart-outline</v-icon>
+        </v-badge>
+  
+        <v-icon v-else class="pa-0">mdi-cart-outline</v-icon>
+        
+      </v-btn>
+    </v-toolbar-items>
 
   </v-app-bar>
 </template>
