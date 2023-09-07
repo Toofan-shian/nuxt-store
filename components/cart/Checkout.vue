@@ -51,7 +51,7 @@
     </v-card-text>
 
     <v-card-actions class="px-4 pb-4">
-      <v-btn class=" block bg-success rounded-lg w-100 text-capitalize text-subtitle-1">
+      <v-btn :disabled="itemsCount == 0" class=" block bg-success rounded-lg w-100 text-capitalize text-subtitle-1">
         pay with Stripe
       </v-btn>
     </v-card-actions>
