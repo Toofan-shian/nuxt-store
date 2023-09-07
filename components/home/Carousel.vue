@@ -21,19 +21,23 @@
             top: 29%;
             right: 48%;
             width: 41%;
-            height: 47%;"
+            height: 47%;
+          "
         >
           <h2
-            class="text-h4 font-weight-bold text-center mb-8"
+            class="text-h6 text-center mb-1 text-sm-h4 text-md-h3 mb-md-3 text-lg-h2 mb-lg-6 text-xl-h"
           >
             Men's Collection
           </h2>
 
           <v-btn
             class=""
-            size="large"
+            :size="btnSize"
             variant="outlined"
-          >Shop now</v-btn>
+            @click="$router.push('/products/?category=Mens Shirts')"
+          >
+            Shop now
+          </v-btn>
         </div>
 
         
@@ -45,17 +49,19 @@
             top: 29%;
             left: 48%;
             width: 41%;
-            height: 47%;"
+            height: 47%;
+          "
         >
           <h2
-            class="text-h4 font-weight-bold text-center mb-8"
+            class="text-h6 text-center mb-1 text-sm-h4 text-md-h3 mb-md-3 text-lg-h2 mb-lg-6 text-xl-h"
           >
             Women's Collection
           </h2>
 
           <v-btn
-            size="large"
+            :size="btnSize"
             variant="outlined"
+            @click="$router.push('/products/?category=Womens Dresses')"
           >Shop now</v-btn>
         </div>
 
@@ -66,10 +72,32 @@
 </template>
 
 <script setup>
+import {useDisplay} from 'vuetify'
+
+let display = useDisplay()
+
 let images = ref([
           '/slide-22.jpg',
           '/slide-1.jpg',
         ])
+let btnSize = computed(() => {
+  switch (display.name.value) {
+    case 'xs':
+      return 'x-small'
+
+    case 'sm':
+      return 'small'
+
+    case 'md':
+      return 'large'
+
+    case 'lg': 
+      return 'x-large'
+
+    default:
+      break;
+  }
+})
 </script>
 
 <style scoped>

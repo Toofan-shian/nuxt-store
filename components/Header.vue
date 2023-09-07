@@ -2,17 +2,21 @@
   <v-app-bar
     class=""
     elevation="3"
-    height="70"
+    height="78"
   >
 
 
     <div
-      class="header-title text-h6  h-100 px-4 d-flex align-center ml-6 v-ripple"
+      class="header-title text-h6  h-100 px-4 d-flex align-center ml-3  v-ripple"
       @click="$router.push('/')"
       v-ripple
     >
       Nuxify Shop
     </div>
+
+    <span class="text-body-2">
+      {{ display.name }}
+    </span>
 
     <v-spacer></v-spacer>
 
@@ -47,6 +51,9 @@
 
 <script setup>
 import { useCartStore } from '@/stores/cart';
+import {useDisplay} from 'vuetify'
+
+let display = useDisplay()
 
 let cartStore = useCartStore()
 
