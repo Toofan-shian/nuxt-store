@@ -1,6 +1,6 @@
 <template>
   <v-card
-    class="product-card-list w-100 elevation-1"
+    class="product-card-list w-100 "
     hover
     :to="`/products/${product.id}`"
 

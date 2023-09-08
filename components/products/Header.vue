@@ -1,17 +1,61 @@
 <template>
 
+  <!-- LAYOUT & SEARCH -->
+  <v-row
+    class="mt-n6"
+  >
+    <v-col
+      cols="6"
+      class="d-flex align-end"
+    >
+      <v-btn
+        @click="grid = !grid"
+        :class="{'bg-info': grid}"
+        size="small"
+      >
+        <v-icon>mdi-apps</v-icon>
+      </v-btn>
+
+      <v-btn
+        @click="grid = !grid"
+        :class="{'bg-info': !grid}"
+        size="small"
+        class="ml-3 me-auto"
+      >
+        <v-icon>mdi-view-list</v-icon>
+      </v-btn>
+    </v-col>
+
+    <v-col
+      class="d-flex justify-end align-end"
+      cols="6"
+    >
+        <!-- SEARCH FIELD -->
+        <v-text-field
+          hide-details
+          append-inner-icon="mdi-magnify"
+          variant="underlined"
+          placeholder="Search Here..."
+          class="search-field"
+          clearable
+          v-model="searchValue"
+          @input="inputEntered"
+          rounded
+        ></v-text-field>
+    </v-col>
+  </v-row>
+
   <!-- CATEGORY-TITLE -->
   <v-row
-    class="justify-center align-center"
-    no-gutters
+    class="justify-center align-center "
   >
     <div
       v-ripple
       id="menuActivator"
-      class="category-title rounded-t-lg d-flex align-center justify-center mt-11 mb-6 pb-1 px-1"
+      class="category-title rounded-t-lg d-flex align-center justify-center mt-6 mt-sm-8 mb-6 pb-1 px-1"
     >
       <h2
-        class="text-center text-h3 text-grey-darken-2 px-1 py-1"
+        class="text-center text-h4 text-sm-h3 text-lg-h2 text-grey-darken-2 px-1 py-1"
       >
         {{ category }}
       </h2>
@@ -38,48 +82,31 @@
     </v-menu>
   </v-row>
 
-  <!-- FILTERS -->
+  <!-- SORT & PRICE FILTER -->
   <v-row
-    class="mb-14"
-    no-gutters
+    class="mb-14 "
   >
+    <!-- sort select -->
     <v-col
-      cols="12"
-      class="d-flex justify-space-between align-end"
+      class=" d-flex align-end pr-4"
+      cols="6"
     >
+      <v-select
+        rounded
+        v-model="sortModel"
+        :items="sortItems"
+        variant="underlined"
+        hide-details
+        class="sort-select pt-0 ma-0"
+        placeholder="Sort By"
+      ></v-select>
+    </v-col>
 
-      <!-- layout & sort -->
-      <div class="d-flex align-end">
-        <v-btn
-          @click="grid = !grid"
-          :class="{'bg-info': grid}"
-          size="small"
-        >
-          <v-icon>mdi-apps</v-icon>
-        </v-btn>
-        <v-btn
-          @click="grid = !grid"
-          :class="{'bg-info': !grid}"
-          size="small"
-          class="ml-3"
-        >
-          <v-icon>mdi-view-list</v-icon>
-        </v-btn>
-
-        <!-- sort select -->
-        <v-select
-          rounded
-          v-model="sortModel"
-          :items="sortItems"
-          variant="underlined"
-          hide-details
-          label="Sort By"
-          class="sort-select ml-4 "
-        ></v-select>
-      </div>
-
-
-      <!-- price filter -->
+    <!-- FILTER PRICE -->
+    <v-col
+      class="d-flex justify-end align-end pl-4"
+      cols="6"
+    >
       <v-btn
         id="pricefilter"
         variant="text"
@@ -89,7 +116,7 @@
       >
         <div class="text-capitalize price-filter-content rounded-b-lg ">
 
-          <span class="text-grey-darken-1 text-subtitle-1 mr-4">Filter price</span>
+          <span class="text-grey-darken-1 text-subtitle-1 mr-4">Price Filter</span>
 
           <div
             class="price-filter-content-range text-end text-caption font-weight-thin text-grey-darken-2"
@@ -127,19 +154,6 @@
           ></v-range-slider>
         </div>
       </v-menu>
-      
-      <!-- search field -->
-      <v-text-field
-        hide-details
-        prepend-inner-icon="mdi-magnify"
-        variant="underlined"
-        placeholder="Search Here..."
-        class="search-field"
-        clearable
-        v-model="searchValue"
-        @input="inputEntered"
-        rounded
-      ></v-text-field>
     </v-col>
   </v-row>
 </template>
@@ -204,7 +218,7 @@ let inputEntered = () => {
 <style lang="scss" scoped>
 .sort-select {
   width: 90px;
-  /* max-width: 90px; */
+  max-width: 150px;
 }
 .category-title {
   cursor: pointer;
@@ -218,6 +232,10 @@ let inputEntered = () => {
 } */
 .price-filter-content-range {
   display: inline-block;
-  min-width: 80px;
+  // min-width: 80px;
+}
+
+.v-field__input {
+  padding: 0px;
 }
 </style>

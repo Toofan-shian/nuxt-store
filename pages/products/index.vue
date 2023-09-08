@@ -1,68 +1,88 @@
 <template>
   <v-container class="mt-10 mb-10">
-    <v-sheet
-      class="px-10 rounded-lg pb-14"
-      elevation="1"
+    <v-row
+      class="mt-xl-10"
     >
-      <productsHeader
-        :category="category"
-        :priceRange="priceRangeRef"
-        @category-change="changeCategory"
-        @layoutChange="changeLayout"
-        @sortChange="setSortingProducts"
-        @priceRangeChange="setNewPrice"
-        @searchTermChange="setNewSearchTerm"
-      ></productsHeader>
-
-      <v-row class="mt-0" no-gutters> 
-
-        <!-- products -->
-        <v-col cols="12" class="">
-
-
-          <!-- lOADING... -->
-          <v-row v-if="!products.length" class="mt-8">
-            <v-col cols="12">
-              <h3 class="text-center">Loading...</h3>
-            </v-col>
-          </v-row>
-
-
-          <div v-else>
+      <v-col
+        cols="12"
+        lg="10"
+        offset-lg="1"
+        xl="8"
+        offset-xl="2"
+      >
+        <v-sheet
+          class="rounded-lg pb-14"
+          elevation="1"
+        >
+          <v-container
+            class="px-sm-10 "
+          >
+            <productsHeader
+              :category="category"
+              :priceRange="priceRangeRef"
+              @category-change="changeCategory"
+              @layoutChange="changeLayout"
+              @sortChange="setSortingProducts"
+              @priceRangeChange="setNewPrice"
+              @searchTermChange="setNewSearchTerm"
+            ></productsHeader>
+      
             <v-row
-              v-show="grid"
-              class=""
-            >
+              class="mt-0"
+            > 
+      
+              <!-- products -->
               <v-col
-                v-for="(product, index) in products"
-                :key="index"
                 cols="12"
-                sm="6"
-                md="4"
+                class=""
               >
-                <ProductsSingleGrid
-                  :product="product"
-                  class=""
-                />
+      
+                <!-- lOADING... -->
+                <v-row v-if="!products.length" class="mt-8">
+                  <v-col cols="12">
+                    <h3 class="text-center">Loading...</h3>
+                  </v-col>
+                </v-row>
+      
+      
+                <div v-else>
+                  <v-row
+                    v-show="grid"
+                    class=""
+                  >
+                    <v-col
+                      v-for="(product, index) in products"
+                      :key="index"
+                      cols="12"
+                      sm="6"
+                      md="4"
+                    >
+                      <ProductsSingleGrid
+                        :product="product"
+                        class=""
+                      />
+                    </v-col>
+                  </v-row>
+      
+                  <v-row
+                    v-show="!grid"
+                    v-for="(product, index) in products"
+                    :key="index"
+                    class="rounded-lg mb-7 mx-1 mx-sm-8 mx-md-16 border-r"
+                  >
+                    <ProductsSingleList
+                      :product="product"
+                      class=""
+                    />
+                  </v-row>
+                </div>
               </v-col>
             </v-row>
-
-            <v-row
-              v-show="!grid"
-              v-for="(product, index) in products"
-              :key="index"
-              class="rounded-lg mb-7 mx-16"
-              no-gutters
-            >
-              <ProductsSingleList
-                :product="product"
-                class=""
-              />
-            </v-row>
-          </div>
-        </v-col>
-      </v-row>
-    </v-sheet>
+          </v-container>
+        </v-sheet>
+      </v-col>
+    </v-row>
+    
   </v-container>
 </template>
 
