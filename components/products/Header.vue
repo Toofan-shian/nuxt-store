@@ -4,9 +4,13 @@
   <v-row
     class="mt-n6"
   >
+    <!-- LAYOUT -->
     <v-col
-      cols="6"
       class="d-flex align-end"
+      cols="6"
+      sm="7"
+      md="9"
+      lg="9"
     >
       <v-btn
         @click="grid = !grid"
@@ -29,19 +33,22 @@
     <v-col
       class="d-flex justify-end align-end"
       cols="6"
+      sm="5"
+      md="3"
+      lg="3"
     >
-        <!-- SEARCH FIELD -->
-        <v-text-field
-          hide-details
-          append-inner-icon="mdi-magnify"
-          variant="underlined"
-          placeholder="Search Here..."
-          class="search-field"
-          clearable
-          v-model="searchValue"
-          @input="inputEntered"
-          rounded
-        ></v-text-field>
+      <!-- SEARCH FIELD -->
+      <v-text-field
+        hide-details
+        append-inner-icon="mdi-magnify"
+        variant="underlined"
+        placeholder="Search Here..."
+        class="search-field w-100"
+        clearable
+        v-model="searchValue"
+        @input="inputEntered"
+        rounded
+      ></v-text-field>
     </v-col>
   </v-row>
 
@@ -90,6 +97,9 @@
     <v-col
       class=" d-flex align-end pr-4"
       cols="6"
+      sm="7"
+      md="9"
+      lg="9"
     >
       <v-select
         rounded
@@ -104,19 +114,25 @@
 
     <!-- FILTER PRICE -->
     <v-col
-      class="d-flex justify-end align-end pl-4"
+      class="d-flex align-end pl-0 pa-sm-2"
       cols="6"
+      sm="5"
+      md="3"
+      lg="3"
     >
-      <v-btn
+      <div
         id="pricefilter"
-        variant="text"
-        class="rounded-t-lg price-filter"
-        style="border-bottom: 1px solid rgb(155, 155, 155); border-radius: 0px; padding: 0px 4px;"
-
+        class="rounded-t-lg w-100 pb-1 pt-2"
+        style="cursor: pointer; border-bottom: 1px solid rgb(155, 155, 155); border-radius: 0px; padding: 0px 4px;"
+        v-ripple
       >
-        <div class="text-capitalize price-filter-content rounded-b-lg ">
+        <div class="text-capitalize d-flex align-center w-100 text-body-2 text-sm-subtitle-1">
 
-          <span class="text-grey-darken-1 text-subtitle-1 mr-4">Price Filter</span>
+          <span
+            class="text-grey-darken-1  me-auto"
+          >
+            Price Filter
+          </span>
 
           <div
             class="price-filter-content-range text-end text-caption font-weight-thin text-grey-darken-2"
@@ -132,14 +148,14 @@
             mdi-menu-down
           </v-icon>
         </div>
-      </v-btn>
+      </div>
 
       <v-menu
         :close-on-content-click="false"
         activator="#pricefilter"
       >
         <div
-          class=" py-3 px-1 bg-grey-lighten-4"
+          class=" py-3 px-1 bg-grey-lighten-4 rounded-b-lg"
         >
           <v-range-slider
             color="info-darken-2"
@@ -224,9 +240,9 @@ let inputEntered = () => {
   cursor: pointer;
   border-bottom: 1px solid rgb(175, 175, 175);
 }
-.search-field {
-  max-width: 250px;
-}
+// .search-field {
+//   max-width: 250px;
+// }
 /* .price-filter-content {
   position: relative;
 } */
@@ -235,7 +251,4 @@ let inputEntered = () => {
   // min-width: 80px;
 }
 
-.v-field__input {
-  padding: 0px;
-}
 </style>
