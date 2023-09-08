@@ -38,7 +38,7 @@
             class="ma-0 "
             style="min-width:1px;"
             size="small"
-            variant="plain"
+            :variant="display.xs.value ? 'plain' : 'outlined'"
             @click="() => changeQty(-1)"
           >
             <v-icon class="pa-0 ma-0">mdi-minus</v-icon>
@@ -50,7 +50,7 @@
             class="ma-0 "
             style="min-width:1px;"
             size="small"
-            variant="plain"
+            :variant="display.xs.value ? 'plain' : 'outlined'"
             @click="() => changeQty(1)"
           >
             <v-icon class="">mdi-plus</v-icon>
@@ -60,7 +60,7 @@
 
           <v-btn
             class="ma-0"
-            size="x-small"
+            :size="display.xs.value ? 'x-small' : 'small'"
             variant="plain"
             color="red-lighten-2"
             @click="removeProduct"
@@ -75,7 +75,9 @@
 
 <script setup lang="ts">
 import { useCartStore } from '@/stores/cart';
+import {useDisplay} from 'vuetify'
 
+let display = useDisplay()
 const props = defineProps(['product'])
 const cartStore = useCartStore()
 
