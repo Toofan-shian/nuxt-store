@@ -6,7 +6,9 @@
     <v-row>
 
       <!-- IMAGE -->
-      <v-col cols="4">
+      <v-col
+        cols="4"
+      >
         <v-img :src="product.thumbnail" class="" height="150" cover>
           <template v-slot:placeholder>
             <v-row class="fill-height ma-0" align="center" justify="center">
@@ -35,33 +37,33 @@
           <v-btn
             class="ma-0 "
             style="min-width:1px;"
-            density="compact"
-            variant="outlined"
-            @click="() => changeQty(1)"
+            size="small"
+            variant="plain"
+            @click="() => changeQty(-1)"
           >
-            <v-icon class="pa-0 ma-0">mdi-plus</v-icon>
+            <v-icon class="pa-0 ma-0">mdi-minus</v-icon>
           </v-btn>
-
+          
           <span class="pa-0 mx-3">{{ product.quantity }}</span>
-
+          
           <v-btn
             class="ma-0 "
             style="min-width:1px;"
-            density="compact"
-            variant="outlined"
-            @click="() => changeQty(-1)"
+            size="small"
+            variant="plain"
+            @click="() => changeQty(1)"
           >
-            <v-icon>mdi-minus</v-icon>
+            <v-icon class="">mdi-plus</v-icon>
           </v-btn>
 
           <v-spacer></v-spacer>
 
           <v-btn
-          class="ma-0"
-          size="small"
-          variant="plain"
-          color="red-lighten-2"
-          @click="removeProduct"
+            class="ma-0"
+            size="x-small"
+            variant="plain"
+            color="red-lighten-2"
+            @click="removeProduct"
           >
             remove
           </v-btn>

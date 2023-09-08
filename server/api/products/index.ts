@@ -6,10 +6,10 @@ export default defineEventHandler(async event => {
   // let allProducts = await $fetch("https://dummyjson.com/products")
 
   try {
-    console.log('fetching womens products')
+    console.log('fetching womens product (server)')
     let womensRes = await $fetch("https://dummyjson.com/products/category/womens-dresses")
     
-    console.log('fetching mens products')
+    console.log('fetching mens products (server)')
     let mensRes = await $fetch("https://dummyjson.com/products/category/mens-shirts")
     
     for(let i = 0; i < 5; i++) {
@@ -20,7 +20,7 @@ export default defineEventHandler(async event => {
     return products
   
   } catch (error) {
-    console.log('faild to connect to api')
+    console.log('faild to connect to api (server)')
     throw(error)
   }
 
