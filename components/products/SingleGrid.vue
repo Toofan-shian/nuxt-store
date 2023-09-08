@@ -1,9 +1,9 @@
 <template>
   <v-card
-    class="product-card-grid mx-auto pb-2"
+    class="product-card-grid w-100 pb-2"
     :to="`/products/${product.id}`"
   >
-    <v-img :src="product.thumbnail" class="" height="200" cover>
+    <v-img :src="product.thumbnail" class="" height="333" cover>
       <template v-slot:placeholder>
         <v-row
           class="h-100 d-flex align-center justify-center ma-0"
@@ -60,7 +60,7 @@ let addToCart = () => {
 
 <style scoped>
 .product-card-grid {
-  max-width: 250px;
+  /* max-width: 250px; */
   border: 1px solid rgb(189, 189, 189);
   border-radius: 12px;
 }

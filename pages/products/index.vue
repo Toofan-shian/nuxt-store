@@ -11,10 +11,11 @@
         offset-xl="2"
       >
         <v-sheet
-          class="rounded-lg pb-14 border"
+          class="rounded-lg pb-14 "
+          :class="{'border': display.mdAndUp.value}"
         >
           <v-container
-            class="px-sm-10 "
+            class="px-sm-6 px-md-8"
           >
             <productsHeader
               :category="category"
@@ -52,6 +53,7 @@
                     <v-col
                       v-for="(product, index) in products"
                       :key="index"
+                      class=""
                       cols="12"
                       sm="6"
                       md="4"
@@ -86,8 +88,10 @@
 </template>
 
 <script setup lang="ts">
-
+import {useDisplay} from 'vuetify'
 import {useCartStore} from '@/stores/cart'
+
+let display = useDisplay()
 
 let qry = useRoute().query
 let category = ref('All Products')
