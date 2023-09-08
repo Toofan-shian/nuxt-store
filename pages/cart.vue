@@ -10,8 +10,7 @@
         offset-xl="2"
       >
         <v-sheet
-          class=" rounded-xl pt-6 pb-13 px-6 px-sm-12 px-md-6 px-lg-16"
-          elevation="1"
+          class=" rounded-xl border pt-6 pb-13 px-6 px-sm-12 px-md-6 px-lg-16"
           width="100%"
         >
           <!-- TITLE -->

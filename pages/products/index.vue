@@ -1,7 +1,7 @@
 <template>
-  <v-container class="mt-10 mb-10">
+  <v-container class="my-5 my-sm-6 my-md-8 my-lg-12 my-xl-16">
     <v-row
-      class="mt-xl-10"
+      class=""
     >
       <v-col
         cols="12"
@@ -11,8 +11,7 @@
         offset-xl="2"
       >
         <v-sheet
-          class="rounded-lg pb-14"
-          elevation="1"
+          class="rounded-lg pb-14 border"
         >
           <v-container
             class="px-sm-10 "

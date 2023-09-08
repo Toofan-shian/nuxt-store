@@ -2,7 +2,7 @@
   <v-card class="card-border elevation-1" flat>
     
     <v-card-title
-      class="text-center pt-3 pb-5"
+      class="text-center pt-3 pb-5 font-weight-bold"
     >Checkout
     </v-card-title>
 
@@ -51,7 +51,11 @@
     </v-card-text>
 
     <v-card-actions class="px-4 pb-4">
-      <v-btn :disabled="itemsCount == 0" class=" block bg-success rounded-lg w-100 text-capitalize text-subtitle-1">
+      <v-btn
+        :disabled="itemsCount == 0"
+        class=" block bg-success rounded-lg w-100 text-capitalize text-subtitle-1 mx-auto"
+        style="max-width: 450px;"
+        >
         pay with Stripe
       </v-btn>
     </v-card-actions>
