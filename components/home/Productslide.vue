@@ -3,7 +3,7 @@
     class="py-10"
   >
     <v-row class="">
-      <v-col cols="12">
+      <v-col cols="12 px-sm-4">
         <!-- TITLE -->
         <h1 class="text-center text-h4 text-sm-h3 text-lg-h2 py-9 mb-lg-2">
           <slot name="title"></slot>

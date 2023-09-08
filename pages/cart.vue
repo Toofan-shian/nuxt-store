@@ -10,8 +10,9 @@
         offset-xl="2"
       >
         <v-sheet
-          class=" rounded-xl border pt-6 pb-13 px-6 px-sm-12 px-md-6 px-lg-16"
+          class=" rounded-xl pt-6 pb-13 px-6 px-sm-12 px-md-6 px-lg-16"
           width="100%"
+          :class="{'border': display.smAndUp.value}"
         >
           <!-- TITLE -->
           <v-row class="mt-2">
@@ -81,7 +82,9 @@
 
 <script setup lang="ts">
 import {useCartStore} from '../stores/cart'
+import {useDisplay} from 'vuetify'
 
+let display = useDisplay()
 
 let cartStore = useCartStore()
 let products = ref([])
