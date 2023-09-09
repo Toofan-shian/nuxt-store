@@ -74,9 +74,8 @@ import {useCartStore} from '@/stores/cart'
 let {id} = useRoute().params
 
 let expansionPanels = [
-  {title: 'lkj', text: "sdflsdfjlsdkfjsldkfjlsdkfjlskfj"},
-  {title: 'lkj', text: "sdflsdfjlsdkfjsldkfjlsdkfjlskfj"},
-  {title: 'lkj', text: "sdflsdfjlsdkfjsldkfjlsdkfjlskfj"},
+  {title: 'Money-back Guarantee', text: "You can return the product if there was any problem, and get your money back in 24 hours"},
+  {title: 'Safe Transactions', text: "We are using a p2p connection for the checkout process to ensure a secure purchase"},
 ]
 
 let store = useCartStore()

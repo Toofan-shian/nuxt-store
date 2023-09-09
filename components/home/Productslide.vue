@@ -17,7 +17,6 @@
             class="slider"
             show-arrows
             center-active
-            
           >
             <v-slide-group-item
               v-for="(p, index) in products"
