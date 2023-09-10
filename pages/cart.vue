@@ -38,13 +38,14 @@
             <v-col
               v-if="products.length == 0"
               cols="12"
+              md="8"
   
-              class="d-flex flex-column justify-center align-center mb-8"
+              class="d-flex flex-column justify-center align-center justify-md-start mb-8"
             >
               <h3
                 class="text-h5 text-center mt-1"
               >
-                There is no products in your cart
+                There is no product in your cart
               </h3>
               <v-btn
                 class="mt-4"
