@@ -45,6 +45,8 @@ export const useCartStore = defineStore('cart', {
       },
     ],
     theme: 'light',
+    snackBar: false,
+    snackBarTimeout: null
   }),
 
   getters: {
@@ -128,6 +130,19 @@ export const useCartStore = defineStore('cart', {
 
     },
 
+    activateSnackBar() {
+      if (this.snackBar) {
+        this.snackBar = false;
+        clearTimeout(this.snackBarTimeout)
+      }
+
+      this.snackBar = true;
+      console.log('snackbar activated store');
+      this.snackBarTimeout = setTimeout(() => {
+        this.snackBar = false
+      }, 3000);
+    },
+
     add(productId) {
       let productInCart = this.cartContent.find(product => product.id == productId) 
 
@@ -136,12 +151,13 @@ export const useCartStore = defineStore('cart', {
         product.quantity = 1
         this.cartContent.push(product)
         console.log('product added to cart')
-        console.log(this.cartContent)
+        
       }
       else {
         productInCart.quantity += 1
         console.log('product quantity increased')
       }
+      this.activateSnackBar()
       
     },
 

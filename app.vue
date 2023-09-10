@@ -2,6 +2,7 @@
   <v-app>
     <Header/>
     <v-main class="vuetify-main">
+        <Snack></Snack>
         <NuxtPage/>
     </v-main>
     <Footer class="footer"/>
@@ -9,9 +10,6 @@
 
 
 
-  <!-- <div>
-    <NuxtPage/>
-  </div> -->
 </template>
 
 <style>
