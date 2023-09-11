@@ -1,0 +1,5 @@
+{
+  "platform": "node",
+  "app": "nuxify-shop",
+  "port": 8000
+}
