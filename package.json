@@ -3,7 +3,6 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "start": "node server.js",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
