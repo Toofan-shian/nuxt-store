@@ -69,7 +69,7 @@
                     v-show="!grid"
                     v-for="(product, index) in products"
                     :key="index"
-                    class="rounded-lg mb-7 mx-1 mx-sm-8 mx-md-16 border-r"
+                    class="rounded-lg mb-7 mx-sm-8 mx-md-16"
                   >
                     <ProductsSingleList
                       :product="product"

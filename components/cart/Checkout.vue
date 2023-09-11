@@ -63,21 +63,25 @@
     
     <v-dialog
       v-model="dialog"
-      transition="dialog-bottom-transition"
     >
-      <v-card
-        class="bg-grey-darken-3  py-8 rounded-lg text-no-wrap"
+      <div
+        class="d-flex h-100 w-100 justify-center align-center"
       >
-        <div
-          class="text-no-wrap"
+        <v-card
+          class="bg-grey-darken-3 mt-n16 py-8 rounded-lg   px-md-10"
         >
-          <p
-            class="border-r text-center text-h4 text-no-wrap"
+          <v-card-title
+            class=""
           >
-            thanks for checking out my website
-          </p>
-        </div>
-      </v-card>
+            <h2
+              class="text-center text-h5 text-md-h4 text-lg-h3 text-wrap"
+            >
+              Thanks for checking out my website
+            </h2>
+          </v-card-title>
+        </v-card>
+        
+      </div>
     </v-dialog>
   </v-card>
 </template>

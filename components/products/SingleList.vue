@@ -1,6 +1,6 @@
 <template>
   <v-card
-    class="product-card-list w-100 "
+    class="product-card-list w-100 mx-xl-16"
     hover
     :to="`/products/${product.id}`"
 
@@ -48,8 +48,13 @@
 
         <v-card-text
           class=""
+          style="max-height: 75px; overflow: hidden;"
         >
-          {{ product.description }}
+          <div
+            class="truncate-multiline"
+          >
+            {{ product.description }}
+          </div>
         </v-card-text>
         
         <v-card-actions
@@ -92,5 +97,13 @@ let goToDetails = () => {
 .product-card-list {
   border: 1px solid rgb(189, 189, 189);
   border-radius: 12px;
+}
+.truncate-multiline {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 3em; /* Adjust the height to match the number of lines */
 }
 </style>
