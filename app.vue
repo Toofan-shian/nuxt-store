@@ -13,9 +13,7 @@
 </template>
 
 <style>
-/* .footer {
-  max-height: 10px;
-} */
+
 .vuetify-main {
  padding-top: 80px;
 }

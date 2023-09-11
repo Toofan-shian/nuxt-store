@@ -2,7 +2,7 @@
   <v-card class="card-border elevation-1" flat>
     
     <v-card-title
-      class="text-center pt-3 pb-5 font-weight-bold"
+      class="text-center pt-3 pb-5 text-h5"
     >Order Info
     </v-card-title>
 
