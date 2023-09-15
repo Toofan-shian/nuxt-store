@@ -13,7 +13,7 @@
         cols="4"
       >
         <v-img
-          :src="product.thumbnail"
+          :src="product.thumb"
           height="200"
           cover
           class=""

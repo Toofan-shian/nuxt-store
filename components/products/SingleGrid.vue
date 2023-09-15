@@ -3,7 +3,7 @@
     class="product-card-grid w-100 pb-2"
     :to="`/products/${product.id}`"
   >
-    <v-img :src="product.thumbnail" class="" height="333" cover>
+    <v-img :src="product.thumb" class="" height="333" cover>
       <template v-slot:placeholder>
         <v-row
           class="h-100 d-flex align-center justify-center ma-0"
