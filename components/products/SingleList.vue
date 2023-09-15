@@ -3,20 +3,20 @@
     class="product-card-list w-100 mx-xl-16"
     hover
     :to="`/products/${product.id}`"
-
+    max-height="333"
   >
     <v-row
-      class=""
+      class=" h-100"
       no-gutters
     >
       <v-col
         cols="4"
+        class="h-100"
       >
         <v-img
           :src="product.thumb"
-          height="200"
+          class="h-100"
           cover
-          class=""
         >
           <template v-slot:placeholder>
             <v-row class="fill-height ma-0 justify-center align-center">
@@ -31,7 +31,7 @@
 
       <v-col
         cols="8"
-        class="d-flex flex-column space-between"
+        class="d-flex flex-column justify-space-around align-space-between "
       >
 
         <v-card-title
@@ -41,24 +41,25 @@
         </v-card-title>
 
         <v-card-subtitle
-          class="mt-n2 "
+          class="mt-n2 mt-sm-n4 mt-md-n8 mt-xl-n10"
         >
           ${{ product.price }}
         </v-card-subtitle>
 
         <v-card-text
-          class=""
+          class="text-body-2 text-sm-body-1"
           style="max-height: 75px; overflow: hidden;"
         >
           <div
-            class="truncate-multiline"
+            class=""
+            :class="{'truncate-multiline-lg': display.lgAndUp.value, 'truncate-multiline': display.mdAndDown}"
           >
             {{ product.description }}
           </div>
         </v-card-text>
         
         <v-card-actions
-          class="d-flex justify-end mb-2 mx-7"
+          class="d-flex justify-end mb-2 mx-7 "
         >
           <v-btn
             @click.prevent="addToCart"
@@ -77,6 +78,10 @@
 
 <script setup>
 import {useCartStore} from '@/stores/cart'
+import {useDisplay} from 'vuetify'
+
+let display = useDisplay()
+
 let props = defineProps(['product'])
 
 let cartStore = useCartStore()
@@ -105,5 +110,13 @@ let goToDetails = () => {
   overflow: hidden;
   text-overflow: ellipsis;
   max-height: 3em; /* Adjust the height to match the number of lines */
+}
+.truncate-multiline-lg {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 5em; /* Adjust the height to match the number of lines */
 }
 </style>

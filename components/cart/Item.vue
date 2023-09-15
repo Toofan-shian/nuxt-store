@@ -8,7 +8,7 @@
       <v-col
         cols="4"
       >
-        <v-img :src="product.thumbnail" class="" height="150" cover>
+        <v-img :src="product.thumb" class="">
           <template v-slot:placeholder>
             <v-row class="fill-height ma-0" align="center" justify="center">
               <v-progress-circular
@@ -27,7 +27,11 @@
       >
         <v-card-title class="pa-0">{{ product.title }}</v-card-title>
 
-        <v-card-subtitle class="pa-0 mt-n5">${{ product.price }}</v-card-subtitle>
+        <v-card-subtitle
+          class="pa-0 mt-n4 mt-sm-n9 mt-xl-n16"
+        >
+          ${{ product.price }}
+        </v-card-subtitle>
 
         <v-card-actions class="pa-0 mr-3 mb-n1">
 

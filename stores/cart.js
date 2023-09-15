@@ -5,42 +5,33 @@ export const useCartStore = defineStore('cart', {
     products: [],
     cartContent: [
       {
-        id: 41,
-        quantity: 1,
-        title: 'NIGHT SUIT',
-        description: 'NIGHT SUIT RED MICKY MOUSE..  For Girls. Fantastic Suits.',
-        price: 55,
-        discountPercentage: 15.05,
-        rating: 4.65,
-        stock: 21,
-        brand: 'RED MICKY MOUSE..',
-        category: 'womens-dresses',
-        thumbnail: 'https://i.dummyjson.com/data/products/41/thumbnail.webp',
-        images: [
-          'https://i.dummyjson.com/data/products/41/1.jpg',
-          'https://i.dummyjson.com/data/products/41/2.webp',
-          'https://i.dummyjson.com/data/products/41/3.jpg',
-          'https://i.dummyjson.com/data/products/41/4.jpg',
-          'https://i.dummyjson.com/data/products/41/thumbnail.webp'
+        "quantity": 3,
+        "id" : 1,
+        "category": "womens-dresses",
+        "title" : "essential loopback terry hoodie",
+        "description" : "We're layering. We're lounging. We're living in this one. The Essential Hoodie is a classic on all counts, with an upgraded fabric that'll have you ditching your old college hoodie in a heartbeat Lightweight cotton fleece Hoodie with crossover at neckline Raglan long sleeves Kangaroo pocket Make it a set with a pair of our Essential Loopback Terry Sweatpants",
+        "price" : 97,
+        "thumb" : "/1/thumb-min.jpg",
+        "images" : [
+          "/1/1-min.jpg",
+          "/1/2-min.jpg",
+          "/1/3-min.jpg",
+          "/1/4-min.jpg"
         ]
-      },
+      }, 
       {
-        id: 51,
-        quantity: 4,
-        title: 'half sleeves T shirts',
-        description: 'Many store is creating new designs and trend every month and every year. Daraz.pk have a beautiful range of men fashion brands',
-        price: 23,
-        discountPercentage: 12.76,
-        rating: 4.26,
-        stock: 132,
-        brand: 'Vintage Apparel',
-        category: 'mens-shirts',
-        thumbnail: 'https://i.dummyjson.com/data/products/51/thumbnail.jpg',
-        images: [
-          'https://i.dummyjson.com/data/products/51/1.png',
-          'https://i.dummyjson.com/data/products/51/2.jpg',
-          'https://i.dummyjson.com/data/products/51/3.jpg',
-          'https://i.dummyjson.com/data/products/51/thumbnail.jpg'
+        "quantity": 1,
+        "id" : 2,
+        "category": "womens-dresses",
+        "title" : "stretch rib crop long sleeve top",
+        "description" : "A deliciously textured top made for lounging, walking, or whatever else you may be doing. Pro tip: wear it as a set with our Stretch Rib Bootcut Legging and let the compliments roll in Stretchy, ribbed organic cotton fabric Wide neck, long sleeves Slim fit, cropped just below the ribcage Make it a set with our Stretch Rib Leggings",
+        "price" : 63,
+        "thumb" : "/2/thumb-min.jpg",
+        "images" : [
+          "/2/1-min.jpg",
+          "/2/2-min.jpg",
+          "/2/3-min.jpg",
+          "/2/4-min.jpg"
         ]
       },
     ],

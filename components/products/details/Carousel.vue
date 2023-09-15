@@ -1,11 +1,10 @@
 <template>
   <v-row class="pr-3 mt-sm-9 mt-md-0" no-gutters>
     <v-carousel
-      class=""
+      class="px-3 px-sm-0"
       :show-arrows="false"
       :model-value="carouselModel"
       hide-delimiters
-      :class="{'small-carousel': display.smAndUp.value, 'x-small-carousel': display.xs.value}"
     >
       <v-carousel-item
         v-for="(img, index) in images"  
@@ -14,10 +13,8 @@
         
       >
         <v-img
-          :cover="display.mdAndUp.value"
-          :class="{'small-carousel': display.smAndUp.value, 'x-small-carousel': display.xs.value}"
           :src="img"
-          class="w-100 h-100 py-2"
+          class="w-100 h-100"
         ></v-img>
       </v-carousel-item>
     </v-carousel>
@@ -51,11 +48,15 @@ let carouselModel = ref()
 </script>
 
 <style scoped>
-.x-small-carousel {
-  max-height: 350px;
+/* .x-small-carousel {
+  max-height: 440px;
 }
 .small-carousel {
-  height: 430px;
-  max-height: 430px;
+  height: 500px;
+  max-height: 900px;
 }
+.md-carousel {
+  height: 900px;
+  max-height: 900px;
+} */
 </style>

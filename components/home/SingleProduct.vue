@@ -4,7 +4,7 @@
     :to="`/products/${product.id}`"
     elevation="2"
   >
-    <v-img :src="product.thumb" class="" height="200" cover>
+    <v-img :src="product.thumb" class=""  width="250">
       <template v-slot:placeholder>
         <v-row
           class="h-100 d-flex align-center justify-center ma-0"

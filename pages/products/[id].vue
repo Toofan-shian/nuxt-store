@@ -1,6 +1,6 @@
 <template>
   <v-container
-    class=" justify-center align-center d-flex my-6 my-md-9 my-lg-10 my-xl-14"
+    class=" justify-center align-center d-flex my-6 my-md-9 my-lg-10 my-xl-14 px-md-0 px-lg-16"
   >
     <v-row>
       <v-col
@@ -16,13 +16,13 @@
   
       <v-row
         v-else
-        class="align-center d-flex justify-center px-sm-8"
+        class="align-center d-flex justify-center px-sm-8 px-md-0"
         no-gutters
       >
         <v-sheet
           :elevation="display.xs.value ? '0':'2'"
           rounded
-          class="w-100 h-100 rounded-lg pa-sm-8 py-md-14"
+          class="w-100 h-100 rounded-lg pa-sm-8 py-md-14 "
         >
           <v-row
             no-gutters

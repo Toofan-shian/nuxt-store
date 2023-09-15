@@ -1,3 +1,5 @@
+an overview of the mongodb database
+
 {
   "products" : [
     {
