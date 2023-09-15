@@ -53,8 +53,8 @@
           <div
             class=""
             :class="{'truncate-multiline-lg': display.lgAndUp.value, 'truncate-multiline': display.mdAndDown}"
+            v-html="product.description"
           >
-            {{ product.description }}
           </div>
         </v-card-text>
         

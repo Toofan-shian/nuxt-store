@@ -20,10 +20,11 @@
         <NuxtLink
           v-for="link in links"
           :to="link.path"
-          class="mx-4"
+          class="mx-4 "
         >
           <span
             class="text-grey-lighten-3"
+            style="text-decoration: none;"
           >{{ link.name }}
           </span>
         </NuxtLink>

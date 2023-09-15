@@ -73,8 +73,8 @@
       
               <p
                 class="mt-8"
+                v-html="product.description"
               >
-                {{ product.description }}
               </p>
       
               <v-btn

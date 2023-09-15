@@ -7,7 +7,6 @@
     <div
       class="header-title text-h6  h-100 px-5 px-sm-6 d-flex align-center "
       @click="$router.push('/')"
-
       v-ripple
     >
       Nuxify Shop
@@ -67,6 +66,6 @@ const cartItemsCount = computed(() => {
   cursor: pointer;
 }
 .header-title:hover{
-  background-color: rgb(241, 241, 241);
+  background-color: rgb(244, 244, 244);
 }
 </style>

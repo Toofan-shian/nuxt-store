@@ -10,13 +10,13 @@
         class="px-sm-4 px-0"
       >
         <!-- TITLE -->
-        <h1 class="text-center text-h4 text-sm-h3 text-lg-h2 py-9 mb-lg-2">
+        <h1 class="text-center text-h4 text-sm-h3 text-lg-h2 pt-9 pb-5 pb-sm-8 pb-md-10 mb-lg-2">
           <slot name="title"></slot>
         </h1>
   
         <!-- PRODUCTS SLIDER-->
         <v-sheet
-          class="py-9 rounded-lg"
+          class="py-2 rounded-lg"
           :class="{'border': display.smAndUp.value}"
         >
           <v-slide-group
