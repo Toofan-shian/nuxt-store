@@ -18,14 +18,14 @@
     </v-img>
 
     <v-card-title
-      class="text-capitalize"
+      class="text-capitalize pt-3"
     >
       {{ product.title }}
     </v-card-title>
 
-    <v-card-subtitle class="mt-n3">
+    <!-- <v-card-subtitle class="mt-n3">
       ${{ product.price }}
-    </v-card-subtitle>
+    </v-card-subtitle> -->
   </v-card>
 </template>
 

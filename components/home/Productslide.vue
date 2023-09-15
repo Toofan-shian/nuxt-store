@@ -1,13 +1,13 @@
 <template>
   <v-container
-    class="py-10"
+    class="py-10 px-1 px-sm-4"
   >
     <v-row class="">
       <v-col
         cols="12"
         xl="8"
         offset-xl="2"
-        class="px-sm-4"
+        class="px-sm-4 px-0"
       >
         <!-- TITLE -->
         <h1 class="text-center text-h4 text-sm-h3 text-lg-h2 py-9 mb-lg-2">
@@ -16,7 +16,8 @@
   
         <!-- PRODUCTS SLIDER-->
         <v-sheet
-          class="py-9 rounded-lg border"
+          class="py-9 rounded-lg"
+          :class="{'border': display.smAndUp.value}"
         >
           <v-slide-group
             class=" d-flex justify-center "
@@ -56,9 +57,9 @@
 
 <script setup lang="ts">
 import {useCartStore} from '@/stores/cart.js'
-// import {useDisplay} from 'vuetify'
+import {useDisplay} from 'vuetify'
 
-// let display = useDisplay()
+let display = useDisplay()
 
 let props = defineProps(['category'])
 

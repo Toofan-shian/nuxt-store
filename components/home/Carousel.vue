@@ -4,11 +4,15 @@
     show-arrows="hover"
     class="carousel"
     height="auto"
+    color="grey-darken-2"
   >
     <v-carousel-item
       v-for="(image, i) in images"
       :key="i"
       :src="image"
+      cover
+      min-height="300"
+      class=""
     > 
       <div
         class="h-100"
@@ -53,7 +57,7 @@
           "
         >
           <h2
-            class="text-h6 text-center mb-1 text-sm-h4 text-md-h3 mb-md-3 text-lg-h2 mb-lg-6 text-xl-h"
+            class="text-h5 text-center mb-1 text-sm-h4 text-md-h3 mb-md-3 text-lg-h2 mb-lg-6 text-xl-h"
           >
             Women's Collection
           </h2>

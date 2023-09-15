@@ -13,9 +13,9 @@
       Nuxify Shop
     </div>
 
-    <span class="text-body-2">
+    <!-- <span class="text-body-2">
       {{ display.name }}
-    </span>
+    </span> -->
 
     <v-spacer></v-spacer>
 

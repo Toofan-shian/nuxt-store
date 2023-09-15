@@ -4,36 +4,36 @@ export const useCartStore = defineStore('cart', {
   state: () => ({
     products: [],
     cartContent: [
-      {
-        "quantity": 3,
-        "id" : 1,
-        "category": "womens-dresses",
-        "title" : "essential loopback terry hoodie",
-        "description" : "We're layering. We're lounging. We're living in this one. The Essential Hoodie is a classic on all counts, with an upgraded fabric that'll have you ditching your old college hoodie in a heartbeat Lightweight cotton fleece Hoodie with crossover at neckline Raglan long sleeves Kangaroo pocket Make it a set with a pair of our Essential Loopback Terry Sweatpants",
-        "price" : 97,
-        "thumb" : "/1/thumb-min.jpg",
-        "images" : [
-          "/1/1-min.jpg",
-          "/1/2-min.jpg",
-          "/1/3-min.jpg",
-          "/1/4-min.jpg"
-        ]
-      }, 
-      {
-        "quantity": 1,
-        "id" : 2,
-        "category": "womens-dresses",
-        "title" : "stretch rib crop long sleeve top",
-        "description" : "A deliciously textured top made for lounging, walking, or whatever else you may be doing. Pro tip: wear it as a set with our Stretch Rib Bootcut Legging and let the compliments roll in Stretchy, ribbed organic cotton fabric Wide neck, long sleeves Slim fit, cropped just below the ribcage Make it a set with our Stretch Rib Leggings",
-        "price" : 63,
-        "thumb" : "/2/thumb-min.jpg",
-        "images" : [
-          "/2/1-min.jpg",
-          "/2/2-min.jpg",
-          "/2/3-min.jpg",
-          "/2/4-min.jpg"
-        ]
-      },
+      // {
+      //   "quantity": 3,
+      //   "id" : 1,
+      //   "category": "womens-dresses",
+      //   "title" : "essential loopback terry hoodie",
+      //   "description" : "We're layering. We're lounging. We're living in this one. The Essential Hoodie is a classic on all counts, with an upgraded fabric that'll have you ditching your old college hoodie in a heartbeat Lightweight cotton fleece Hoodie with crossover at neckline Raglan long sleeves Kangaroo pocket Make it a set with a pair of our Essential Loopback Terry Sweatpants",
+      //   "price" : 97,
+      //   "thumb" : "/1/thumb-min.jpg",
+      //   "images" : [
+      //     "/1/1-min.jpg",
+      //     "/1/2-min.jpg",
+      //     "/1/3-min.jpg",
+      //     "/1/4-min.jpg"
+      //   ]
+      // }, 
+      // {
+      //   "quantity": 1,
+      //   "id" : 2,
+      //   "category": "womens-dresses",
+      //   "title" : "stretch rib crop long sleeve top",
+      //   "description" : "A deliciously textured top made for lounging, walking, or whatever else you may be doing. Pro tip: wear it as a set with our Stretch Rib Bootcut Legging and let the compliments roll in Stretchy, ribbed organic cotton fabric Wide neck, long sleeves Slim fit, cropped just below the ribcage Make it a set with our Stretch Rib Leggings",
+      //   "price" : 63,
+      //   "thumb" : "/2/thumb-min.jpg",
+      //   "images" : [
+      //     "/2/1-min.jpg",
+      //     "/2/2-min.jpg",
+      //     "/2/3-min.jpg",
+      //     "/2/4-min.jpg"
+      //   ]
+      // },
     ],
     theme: 'light',
     snackBar: false,
