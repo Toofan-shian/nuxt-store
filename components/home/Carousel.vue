@@ -11,7 +11,7 @@
       :key="i"
       :src="image"
       cover
-      min-height="300"
+      min-height="240"
       class=""
     > 
       <div
@@ -22,14 +22,14 @@
           class="d-flex justify-center align-center flex-column"
           style="
             position: absolute;
-            top: 29%;
-            right: 48%;
-            width: 41%;
-            height: 47%;
+            top: 12%;
+            right: 28%;
+            width: 70%;
+            height: 67%;
           "
         >
           <h2
-            class="text-h6 text-center mb-1 text-sm-h4 text-md-h3 mb-md-3 text-lg-h2 mb-lg-6 text-xl-h"
+            class="text-h4 text-center mb-2 text-sm-h4 mb-sm-3 text-md-h2 mb-md-4 text-lg-h2 mb-lg-6 text-xl-h"
           >
             Men's Collection
           </h2>
@@ -50,14 +50,14 @@
           class="d-flex justify-center align-center flex-column"
           style="
             position: absolute;
-            top: 29%;
-            left: 48%;
-            width: 41%;
-            height: 47%;
+            top: 12%;
+            right: 1%;
+            width: 70%;
+            height: 67%;
           "
         >
           <h2
-            class="text-h5 text-center mb-1 text-sm-h4 text-md-h3 mb-md-3 text-lg-h2 mb-lg-6 text-xl-h"
+            class="text-h4 text-center mb-2 text-sm-h4 mb-sm-3 text-md-h2 mb-md-4 text-lg-h2 mb-lg-6 text-xl-h"
           >
             Women's Collection
           </h2>
@@ -81,8 +81,8 @@ import {useDisplay} from 'vuetify'
 let display = useDisplay()
 
 let images = ref([
-          '/slide-22.jpg',
-          '/slide-1.jpg',
+          '/man.jpg',
+          '/woman.jpg',
         ])
 let btnSize = computed(() => {
   switch (display.name.value) {
@@ -95,9 +95,12 @@ let btnSize = computed(() => {
     case 'md':
       return 'large'
 
-    case 'lg': 
-      return 'x-large'
+      case 'lg': 
+        return 'x-large'
 
+      case 'xl': 
+      return 'x-large'
+      
     default:
       break;
   }

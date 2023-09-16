@@ -107,7 +107,7 @@
         :items="sortItems"
         variant="underlined"
         hide-details
-        class="sort-select pt-0 ma-0"
+        class="sort-select pt-0 ma-0 text-h1"
         placeholder="Sort By"
       ></v-select>
     </v-col>

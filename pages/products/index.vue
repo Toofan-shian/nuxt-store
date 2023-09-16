@@ -11,7 +11,7 @@
         offset-xl="2"
       >
         <v-sheet
-          class="rounded-lg pb-14 "
+          class="rounded-lg pb-2 "
           :class="{'border': display.mdAndUp.value}"
         >
           <v-container

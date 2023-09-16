@@ -25,10 +25,10 @@
         cols="8"
         class="d-flex flex-column justify-space-around"
       >
-        <v-card-title class="pa-0">{{ product.title }}</v-card-title>
+        <v-card-title class="pa-0 pr-4">{{ product.title }}</v-card-title>
 
         <v-card-subtitle
-          class="pa-0 mt-n4 mt-sm-n9 mt-xl-n16"
+          class="pa-0 mt-n3 mt-sm-n9 mt-xl-n16"
         >
           ${{ product.price }}
         </v-card-subtitle>
